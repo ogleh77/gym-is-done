@@ -77,12 +77,13 @@ public class UserCreationController extends CommonClass implements Initializable
             if (done) {
                 createBtn.setGraphic(null);
                 createBtn.setText("Created");
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "User Created successfully", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "User Created successfully",
+                        new ButtonType("cancel"));
 
                 Optional<ButtonType> result = alert.showAndWait();
 
-                if (result.get().getButtonData().isDefaultButton()) {
-                    stage.close();
+                if (result.isPresent() && !result.get().equals(ButtonType.YES)) {
+                    closeStage(stage, firstname.getParent());
                 }
             }
         });
@@ -98,6 +99,7 @@ public class UserCreationController extends CommonClass implements Initializable
         if (isValid(getMandatoryFields(), genderGroup) && (phone.getText().length() == 7 || !phoneValidation.isVisible())) {
             if (!imageUploaded) {
                 checkImage(imageView, "Profile picture maleh userku!");
+                return;
             }
             if (start) {
                 service.restart();
