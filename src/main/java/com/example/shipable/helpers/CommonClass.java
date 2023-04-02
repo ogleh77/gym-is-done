@@ -38,7 +38,7 @@ public abstract class CommonClass {
     public boolean imageUploaded = false;
     //protected Gym currentGym;
     public final String[] images = {
-            "/com/example/gymproject/style/icons/loading_5.gif",
+            "/com/example/shipable/style/icons/loading_5.gif",
             "/com/example/gymproject/style/icons/loading_man.gif",
             "/com/example/gymproject/style/icons/loading_girl.gif"
     };
