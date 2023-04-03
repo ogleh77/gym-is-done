@@ -10,4 +10,5 @@ module com.example.shipable {
     opens com.example.shipable to javafx.fxml;
     opens com.example.shipable.controllers to javafx.fxml;
     exports com.example.shipable;
+    opens com.example.shipable.controllers.users to javafx.fxml;
 }

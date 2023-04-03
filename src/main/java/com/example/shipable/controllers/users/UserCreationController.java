@@ -1,4 +1,4 @@
-package com.example.shipable.controllers;
+package com.example.shipable.controllers.users;
 
 import com.example.shipable.dao.UserService;
 import com.example.shipable.entities.Users;
