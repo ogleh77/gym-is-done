@@ -154,7 +154,6 @@ public abstract class CommonClass {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(message);
         alert.setTitle("War-gelin!");
-        alert.show();
         return alert;
     }
 

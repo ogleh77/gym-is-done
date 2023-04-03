@@ -1424,121 +1424,197 @@
       <Position>1</Position>
     </argument>
     <table id="504" parent="173" name="backup_table"/>
-    <table id="505" parent="173" name="sqlite_master">
+    <table id="505" parent="173" name="box"/>
+    <table id="506" parent="173" name="gym"/>
+    <table id="507" parent="173" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="506" parent="173" name="sqlite_sequence">
+    <table id="508" parent="173" name="sqlite_sequence">
       <System>1</System>
     </table>
-    <table id="507" parent="173" name="users"/>
-    <column id="508" parent="504" name="backup_id">
+    <table id="509" parent="173" name="users"/>
+    <column id="510" parent="504" name="backup_id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="509" parent="504" name="location">
+    <column id="511" parent="504" name="location">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <key id="510" parent="504">
+    <key id="512" parent="504">
       <ColNames>backup_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="511" parent="505" name="type">
-      <DataType>TEXT|0s</DataType>
-      <Position>1</Position>
-    </column>
-    <column id="512" parent="505" name="name">
-      <DataType>TEXT|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="513" parent="505" name="tbl_name">
-      <DataType>TEXT|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="514" parent="505" name="rootpage">
-      <DataType>INT|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="515" parent="505" name="sql">
-      <DataType>TEXT|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="516" parent="506" name="name">
-      <Position>1</Position>
-    </column>
-    <column id="517" parent="506" name="seq">
-      <Position>2</Position>
-    </column>
-    <column id="518" parent="507" name="user_id">
+    <column id="513" parent="505" name="box_id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
-      <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="519" parent="507" name="first_name">
+    <column id="514" parent="505" name="box_name">
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="520" parent="507" name="last_name">
-      <DataType>VARCHAR(50)|0s</DataType>
+    <column id="515" parent="505" name="is_ready">
+      <DataType>BOOLEAN|0s</DataType>
+      <DefaultExpression>true</DefaultExpression>
+      <Position>3</Position>
+    </column>
+    <key id="516" parent="505">
+      <ColNames>box_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="517" parent="506" name="gym_id">
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="518" parent="506" name="gym_name">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="519" parent="506" name="fitness_cost">
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="521" parent="507" name="phone">
-      <DataType>INT|0s</DataType>
+    <column id="520" parent="506" name="poxing_cost">
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="522" parent="507" name="gender">
-      <DataType>VARCHAR(10)|0s</DataType>
+    <column id="521" parent="506" name="vipBox">
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="523" parent="507" name="shift">
-      <DataType>VARCHAR(50)|0s</DataType>
+    <column id="522" parent="506" name="max_discount">
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="524" parent="507" name="username">
-      <DataType>VARCHAR(50)|0s</DataType>
-      <NotNull>1</NotNull>
+    <column id="523" parent="506" name="pending_date">
+      <DataType>double|0s</DataType>
+      <DefaultExpression>14</DefaultExpression>
       <Position>7</Position>
     </column>
-    <column id="525" parent="507" name="password">
+    <column id="524" parent="506" name="edahab_merchant">
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="526" parent="507" name="image">
+    <column id="525" parent="506" name="zaad_merchant">
+      <DataType>VARCHAR(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <index id="526" parent="506" name="sqlite_autoindex_gym_1">
+      <ColNames>gym_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="527" parent="506">
+      <ColNames>gym_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_gym_1</UnderlyingIndexName>
+    </key>
+    <column id="528" parent="507" name="type">
+      <DataType>TEXT|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="529" parent="507" name="name">
+      <DataType>TEXT|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="530" parent="507" name="tbl_name">
+      <DataType>TEXT|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="531" parent="507" name="rootpage">
+      <DataType>INT|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="532" parent="507" name="sql">
+      <DataType>TEXT|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="533" parent="508" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="534" parent="508" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="535" parent="509" name="user_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="536" parent="509" name="first_name">
+      <DataType>VARCHAR(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="537" parent="509" name="last_name">
+      <DataType>VARCHAR(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="538" parent="509" name="phone">
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="539" parent="509" name="gender">
+      <DataType>VARCHAR(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="540" parent="509" name="shift">
+      <DataType>VARCHAR(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="541" parent="509" name="username">
+      <DataType>VARCHAR(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="542" parent="509" name="password">
+      <DataType>VARCHAR(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="543" parent="509" name="image">
       <DataType>BLOB|0s</DataType>
       <Position>9</Position>
     </column>
-    <column id="527" parent="507" name="role">
+    <column id="544" parent="509" name="role">
       <DataType>Varchar(10)|0s</DataType>
       <Position>10</Position>
     </column>
-    <index id="528" parent="507" name="sqlite_autoindex_users_1">
+    <index id="545" parent="509" name="sqlite_autoindex_users_1">
       <ColNames>phone</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="529" parent="507" name="sqlite_autoindex_users_2">
+    <index id="546" parent="509" name="sqlite_autoindex_users_2">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="530" parent="507">
+    <key id="547" parent="509">
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="531" parent="507">
+    <key id="548" parent="509">
       <ColNames>phone</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_users_1</UnderlyingIndexName>
     </key>
-    <key id="532" parent="507">
+    <key id="549" parent="509">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_users_2</UnderlyingIndexName>
     </key>
