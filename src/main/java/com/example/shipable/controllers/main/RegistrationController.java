@@ -1,4 +1,4 @@
-package com.example.shipable.controllers;
+package com.example.shipable.controllers.main;
 
 import animatefx.animation.Shake;
 import com.example.shipable.dao.CustomerService;

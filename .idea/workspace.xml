@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="39bcd583-cef6-42d9-9be8-1faf0769faec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/gym.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/gym.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/registrations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/registrations.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/resources/com/example/shipable/views",
+    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -63,25 +61,26 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/models" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/entities" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/dao" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/notdone" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="com.example.shipable.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.shipable.HelloApplication" />
       <module name="shipable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.shipable.*" />
+          <option name="PATTERN" value="com.example.shipable.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,7 +90,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.com.example.shipable.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +104,7 @@
       <updated>1680454845918</updated>
       <workItem from="1680454848148" duration="340000" />
       <workItem from="1680455222761" duration="6388000" />
-      <workItem from="1680497796964" duration="11155000" />
+      <workItem from="1680497796964" duration="12704000" />
     </task>
     <servers />
   </component>
