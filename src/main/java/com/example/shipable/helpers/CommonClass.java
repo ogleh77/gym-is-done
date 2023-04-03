@@ -1,6 +1,7 @@
 package com.example.shipable.helpers;
 
 import animatefx.animation.*;
+import com.example.shipable.entities.Customers;
 import com.example.shipable.entities.Users;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,7 +31,7 @@ public abstract class CommonClass {
     private SlideInLeft slideInLeft;
     private FadeIn fadeIn;
 
-    // protected Customers customer;
+    protected Customers customer;
 
     protected Users activeUser;
 
@@ -231,11 +232,9 @@ public abstract class CommonClass {
         return shake;
     }
 
-//    public void setCustomer(Customers customer) {
-//        this.customer = customer;
-//    }
-
-
+    public void setCustomer(Customers customer) {
+        this.customer = customer;
+    }
     public void setActiveUser(Users activeUser) {
         this.activeUser = activeUser;
     }

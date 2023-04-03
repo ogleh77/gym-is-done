@@ -10,10 +10,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/BackupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/notdone/BackupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/backup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/notdone/backup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/gym.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/gym.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +48,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable/dao",
+    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/resources/com/example/shipable/views",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -62,13 +63,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/dao" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/models" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/entities" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/dao" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/notdone" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users" />
     </key>
@@ -103,7 +105,7 @@
       <updated>1680454845918</updated>
       <workItem from="1680454848148" duration="340000" />
       <workItem from="1680455222761" duration="6388000" />
-      <workItem from="1680497796964" duration="8744000" />
+      <workItem from="1680497796964" duration="11155000" />
     </task>
     <servers />
   </component>

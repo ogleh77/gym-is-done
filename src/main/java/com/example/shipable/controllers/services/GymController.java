@@ -1,4 +1,4 @@
-package com.example.shipable.controllers;
+package com.example.shipable.controllers.services;
 
 import com.example.shipable.dao.BoxService;
 import com.example.shipable.dao.GymService;
