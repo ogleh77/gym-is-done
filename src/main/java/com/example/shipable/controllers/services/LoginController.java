@@ -1,6 +1,5 @@
 package com.example.shipable.controllers.services;
 
-import animatefx.animation.FadeOut;
 import com.example.shipable.dao.GymService;
 import com.example.shipable.dao.UserService;
 import com.example.shipable.entities.Gym;
@@ -12,15 +11,12 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +24,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginController extends CommonClass implements Initializable {
-    public AnchorPane loginPane;
     @FXML
     private JFXButton loginBtn;
     @FXML
@@ -38,11 +33,13 @@ public class LoginController extends CommonClass implements Initializable {
     private Label gymTitle;
     private ObservableList<Users> users;
     private Stage currentStage;
-
-
     @FXML
     private ComboBox<Users> userCombo;
     private Gym gym;
+    @FXML
+    private HBox topPane;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public LoginController() {
         try {
@@ -60,6 +57,18 @@ public class LoginController extends CommonClass implements Initializable {
             userCombo.setItems(users);
             gymTitle.setText(gym.getGymName());
             getMandatoryFields().addAll(userCombo, password);
+
+            topPane.setOnMousePressed(event -> {
+                xOffset = currentStage.getX() - event.getScreenX();
+                yOffset = currentStage.getY() - event.getScreenY();
+            });
+
+            topPane.setOnMouseDragged(event -> {
+                currentStage.setX(event.getScreenX() + xOffset);
+                currentStage.setY(event.getScreenY() + yOffset);
+            });
+
+            enterKeyFire(loginBtn, currentStage);
         });
 
         service.setOnSucceeded(e -> {
@@ -68,9 +77,7 @@ public class LoginController extends CommonClass implements Initializable {
             if (error) {
                 errorMessage("Fadlan hubi username ka ama passwordka aad gelisay");
             } else {
-                closeLogin();
-
-                System.out.println("Loged");
+                closeStage();
                 try {
                     openSplash();
                 } catch (IOException ex) {
@@ -82,9 +89,7 @@ public class LoginController extends CommonClass implements Initializable {
 
     @FXML
     void loginHandler() {
-//        // TODO: 01/04/2023 Make it enter event insha Allah
-        if (isValid(getMandatoryFields(), null)) {
-            //loginBtn.setContentDisplay(ContentDisplay.RIGHT);
+         if (isValid(getMandatoryFields(), null)) {
             if (start) {
                 service.restart();
                 loginBtn.setGraphic(getLoadingImageView());
@@ -99,7 +104,7 @@ public class LoginController extends CommonClass implements Initializable {
 
     @FXML
     void exitHandler() {
-        closeLogin();
+        closeStage();
     }
 
     private final Service<Void> service = new Service<>() {
@@ -128,9 +133,7 @@ public class LoginController extends CommonClass implements Initializable {
 //        stage.show();
     }
 
-    private void closeLogin() {
-        FadeOut fadeOut = new FadeOut(loginPane);
-        fadeOut.play();
-        fadeOut.setOnFinished(e -> currentStage.close());
+    private void closeStage() {
+        closeStage(currentStage, userCombo.getParent());
     }
 }

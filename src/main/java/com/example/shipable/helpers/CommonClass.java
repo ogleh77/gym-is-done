@@ -3,6 +3,7 @@ package com.example.shipable.helpers;
 import animatefx.animation.*;
 import com.example.shipable.entities.Customers;
 import com.example.shipable.entities.Users;
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -313,5 +316,14 @@ public abstract class CommonClass {
         imageView.setFitWidth(28);
         imageView.setFitHeight(29);
         return imageView;
+    }
+
+    public void enterKeyFire(JFXButton button, Stage stage) {
+        stage.addEventHandler(KeyEvent.KEY_PRESSED, ev -> {
+            if (ev.getCode() == KeyCode.ENTER) {
+                button.fire();
+                ev.consume();
+            }
+        });
     }
 }
