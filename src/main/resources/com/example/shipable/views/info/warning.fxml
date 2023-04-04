@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="warningPane" prefHeight="518.0" prefWidth="468.0" stylesheets="@../../style/css/small-style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shipable.controllers.info.WarningController">
+<AnchorPane prefHeight="518.0" prefWidth="468.0" stylesheets="@../../style/css/small-style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shipable.controllers.info.WarningController">
     <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="596.0" spacing="180.0" styleClass="top-pane">
         <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="342.0">
             <ImageView fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">

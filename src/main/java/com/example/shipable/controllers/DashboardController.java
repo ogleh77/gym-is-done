@@ -1,9 +1,11 @@
 package com.example.shipable.controllers;
 
+import animatefx.animation.FadeIn;
 import animatefx.animation.FadeInDownBig;
 import animatefx.animation.SlideInLeft;
 import animatefx.animation.SlideOutLeft;
 import com.example.shipable.controllers.info.OutDatedController;
+import com.example.shipable.controllers.info.WarningController;
 import com.example.shipable.controllers.main.DashboardMenuController;
 import com.example.shipable.controllers.main.HomeController;
 import com.example.shipable.controllers.main.RegistrationController;
@@ -128,7 +130,23 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void warningHandler() {
+        try {
+            if (!warningList.isEmpty()) {
+                warningParent.setVisible(false);
+            }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/shipable/views/info/warning.fxml"));
+            Scene scene = new Scene(loader.load());
+            WarningController controller = loader.getController();
+            controller.setOutdatedCustomers(warningList);
+            Stage stage = new Stage(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (Exception e) {
+            errorMessage(e.getMessage());
+        }
+
     }
+
 
     @FXML
     void minimizeHandler() {
@@ -272,6 +290,17 @@ public class DashboardController extends CommonClass implements Initializable {
         }
     }
 
+    public void setWarningList(ObservableList<Customers> warningList) {
+        this.warningList = warningList;
+        if (warningList.isEmpty()) {
+            warningParent.setVisible(false);
+        } else {
+            warningLabel.setText(warningList.size() < 9 ? String.valueOf(warningList.size()) : "9 +");
+            FadeIn fadeIn = new FadeIn(warningParent);
+            fadeIn.setCycleCount(20);
+            fadeIn.play();
+        }
+    }
 //---------------------------Helpers---------------------------
 
     private void dashboard() throws IOException {

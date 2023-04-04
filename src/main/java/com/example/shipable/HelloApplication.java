@@ -15,10 +15,8 @@ import java.sql.SQLException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/shipable/views/info/customer-info.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/shipable/views/service/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        CustomerInfoController controller=fxmlLoader.getController();
-        controller.setCustomer(CustomerService.fetchAllCustomer(UserService.users().get(0)).get(0));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();

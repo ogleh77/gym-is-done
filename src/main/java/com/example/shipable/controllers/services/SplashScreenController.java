@@ -1,12 +1,13 @@
 package com.example.shipable.controllers.services;
 
 import com.example.shipable.HelloApplication;
-import com.example.shipable.controllers.info.WarningController;
+import com.example.shipable.controllers.DashboardController;
 import com.example.shipable.dao.CustomerService;
 import com.example.shipable.entities.Customers;
 import com.example.shipable.entities.Payments;
 import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -37,7 +38,7 @@ public class SplashScreenController extends CommonClass implements Initializable
     private ImageView loadingImage;
 
     private final ObservableList<Customers> warningList;
-    // private Stage stage;
+    private Stage stage;
 
     public SplashScreenController() {
         this.warningList = FXCollections.observableArrayList();
@@ -46,42 +47,16 @@ public class SplashScreenController extends CommonClass implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Platform.runLater(() -> {
+            stage = (Stage) loadingImage.getScene().getWindow();
+        });
         FetchOnlineCustomersByGander.setOnSucceeded(e -> {
-            System.out.println("Finished");
-            System.out.println(warningList);
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/shipable/views/info/warning.fxml"));
-
-            Scene scene = null;
             try {
-                scene = new Scene(fxmlLoader.load());
+                closeStage(stage, loadingImage.getParent());
+                openDashboard();
             } catch (IOException ex) {
-                throw new RuntimeException(ex);
+                errorMessage(ex.getMessage());
             }
-            WarningController controller = fxmlLoader.getController();
-            controller.setOutdatedCustomers(warningList);
-            Stage stage = new Stage(StageStyle.UNDECORATED);
-            stage.setScene(scene);
-           // URL url = getClass().getResource("/com/example/gymproject/style/icons/app-icon.jpeg");
-          //  stage.getIcons().add(new Image(String.valueOf(url)));
-            stage.show();
-//            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/gymproject/views/dashboard.fxml"));
-//            Platform.runLater(() -> {
-//                stage = (Stage) progress.getScene().getWindow();
-//                closeSplash();
-//            });
-//            try {
-//                Scene scene = new Scene(fxmlLoader.load());
-//                DashboardController controller = fxmlLoader.getController();
-//                controller.setWarningList(warningList);
-//                controller.setActiveUser(activeUser);
-//                Stage stage = new Stage(StageStyle.UNDECORATED);
-//                stage.setScene(scene);
-//                URL url = getClass().getResource("/com/example/gymproject/style/icons/app-icon.jpeg");
-//                stage.getIcons().add(new Image(String.valueOf(url)));
-//                stage.show();
-//            } catch (Exception ex) {
-//                throw new RuntimeException(ex);
-//            }
         });
     }
 
@@ -133,5 +108,17 @@ public class SplashScreenController extends CommonClass implements Initializable
 
     }
 
-
+    private void openDashboard() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/shipable/views/dashboard.fxml"));
+        Scene scene = null;
+        scene = new Scene(fxmlLoader.load());
+        DashboardController controller = fxmlLoader.getController();
+        controller.setWarningList(warningList);
+        controller.setActiveUser(activeUser);
+        Stage stage = new Stage(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        URL url = getClass().getResource("/com/example/shipable/style/icons/app-icon.jpeg");
+        stage.getIcons().add(new Image(String.valueOf(url)));
+        stage.show();
+    }
 }

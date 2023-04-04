@@ -1,7 +1,6 @@
 package com.example.shipable.controllers.info;
 
 
-import animatefx.animation.FadeOut;
 import com.example.shipable.entities.Customers;
 import com.example.shipable.helpers.CommonClass;
 import javafx.application.Platform;
@@ -14,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,22 +22,15 @@ public class WarningController extends CommonClass implements Initializable {
     @FXML
     private VBox vbox;
     private Stage thisStage;
-    @FXML
-    private AnchorPane warningPane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Platform.runLater(() -> this.thisStage = (Stage) warningPane.getScene().getWindow());
+        Platform.runLater(() -> this.thisStage = (Stage) vbox.getScene().getWindow());
     }
 
     @FXML
     void cancelHandler() {
-        FadeOut fadeOut = new FadeOut(warningPane);
-        fadeOut.setOnFinished(e -> {
-            thisStage.close();
-        });
-        fadeOut.setSpeed(2);
-        fadeOut.play();
+        closeStage(thisStage, vbox.getParent());
     }
 
     public void setOutdatedCustomers(ObservableList<Customers> outdatedCustomers) {

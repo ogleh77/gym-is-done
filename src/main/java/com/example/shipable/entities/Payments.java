@@ -23,7 +23,7 @@ public class Payments {
     private final SimpleBooleanProperty online = new SimpleBooleanProperty();
     private final SimpleBooleanProperty pending = new SimpleBooleanProperty();
     private JFXButton pendingBtn;
-    private int daysRemind;
+    private int daysRemind=0;
 
     public Payments(int paymentID, String paymentDate, LocalDate expDate, String month, String year, double amountPaid, String paidBy, double discount, boolean poxing, String customerFK, boolean online, boolean pending) {
         this.paymentID = paymentID;
@@ -197,7 +197,8 @@ public class Payments {
     }
 
     public int getDaysRemind() {
-        daysRemind = Period.between(LocalDate.now(), expDate).getDays();
+        if (expDate.isAfter(LocalDate.now()))
+            daysRemind = Period.between(LocalDate.now(), expDate).getDays();
         return daysRemind;
     }
 
