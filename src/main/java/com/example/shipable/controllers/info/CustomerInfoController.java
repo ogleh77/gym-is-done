@@ -47,10 +47,10 @@ public class CustomerInfoController extends CommonClass implements Initializable
     @FXML
     private Label whoAdded;
     @FXML
-    private TableColumn<Payments, Double> amountPaid;
+    private TableColumn<Payments, String> amountPaid;
 
     @FXML
-    private TableColumn<Payments, Double> discount;
+    private TableColumn<Payments, String> discount;
 
     @FXML
     private TableColumn<Payments, LocalDate> expDate;
@@ -70,6 +70,8 @@ public class CustomerInfoController extends CommonClass implements Initializable
     private TableColumn<Payments, String> poxing;
     @FXML
     private TableColumn<Payments, String> running;
+    @FXML
+    private TableColumn<Payments, String> daysRemind;
     @FXML
     private TableView<Payments> tableView;
     @FXML
@@ -144,8 +146,8 @@ public class CustomerInfoController extends CommonClass implements Initializable
         if (payments.isEmpty()) {
             tableView.setPlaceholder(new Label("MACMIILKU PAYMENTS MALEH.."));
         } else {
-            amountPaid.setCellValueFactory(new PropertyValueFactory<>("amountPaid"));
-            discount.setCellValueFactory(new PropertyValueFactory<>("discount"));
+            amountPaid.setCellValueFactory(payment -> new SimpleStringProperty("$" + payment.getValue().getAmountPaid()));
+            discount.setCellValueFactory(payment -> new SimpleStringProperty("$" + payment.getValue().getDiscount()));
             expDate.setCellValueFactory(new PropertyValueFactory<>("expDate"));
             month.setCellValueFactory(new PropertyValueFactory<>("month"));
             paidBy.setCellValueFactory(new PropertyValueFactory<>("paidBy"));
@@ -153,10 +155,14 @@ public class CustomerInfoController extends CommonClass implements Initializable
             pendingBtn.setCellValueFactory(new PropertyValueFactory<>("pendingBtn"));
             poxing.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().isPoxing() ? "√" : "X"));
             running.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().isOnline() ? "√" : "X"));
+            daysRemind.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().getDaysRemind() < 1 ? "0 days" :
+                    payment.getValue().getDaysRemind() == 1 ? "1 day" : payment.getValue().getDaysRemind() + " days"));
             vipBox.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().getBox() != null ? "√" : "X"));
             year.setCellValueFactory(new PropertyValueFactory<>("year"));
             tableView.setItems(payments);
         }
+
+
     }
 
     private void checkPayment(Payments payment) throws SQLException {
@@ -177,7 +183,7 @@ public class CustomerInfoController extends CommonClass implements Initializable
         int daysRemind = Period.between(pendingDate, exp).getDays();
         int month = Period.between(pendingDate, exp).getMonths();
         System.out.println(month);
-        if (month>0) {
+        if (month > 0) {
             daysRemind = 30;
         }
         System.out.println("Days rem " + daysRemind);

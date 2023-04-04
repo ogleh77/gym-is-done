@@ -132,7 +132,6 @@ public class PaymentModel {
         ObservableList<Payments> payments = FXCollections.observableArrayList();
         Statement statement = connection.createStatement();
 
-        Payments payment = null;
         ResultSet rs = statement.executeQuery("SELECT * FROM payments LEFT JOIN box b on payments.box_fk = b.box_id " + "WHERE customer_phone_fk=" + phone + " ORDER BY exp_date DESC ");
 
         return getPayments(payments, statement, rs);

@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Payments {
     private final int paymentID;
@@ -21,7 +22,8 @@ public class Payments {
     private String customerFK;
     private final SimpleBooleanProperty online = new SimpleBooleanProperty();
     private final SimpleBooleanProperty pending = new SimpleBooleanProperty();
-    private   JFXButton pendingBtn;
+    private JFXButton pendingBtn;
+    private int daysRemind;
 
     public Payments(int paymentID, String paymentDate, LocalDate expDate, String month, String year, double amountPaid, String paidBy, double discount, boolean poxing, String customerFK, boolean online, boolean pending) {
         this.paymentID = paymentID;
@@ -188,6 +190,15 @@ public class Payments {
 
     public JFXButton getPendingBtn() {
         return pendingBtn;
+    }
+
+    public void setDaysRemind(int daysRemind) {
+        this.daysRemind = daysRemind;
+    }
+
+    public int getDaysRemind() {
+        daysRemind = Period.between(LocalDate.now(), expDate).getDays();
+        return daysRemind;
     }
 
     @Override
