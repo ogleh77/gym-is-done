@@ -167,15 +167,15 @@
          <TableColumn fx:id="paymentDate" prefWidth="98.0" text="last paid" />
          <TableColumn fx:id="expDate" prefWidth="97.0" text="exp date" />
          <TableColumn fx:id="month" prefWidth="97.0" text="month" />
-         <TableColumn fx:id="year" prefWidth="104.0" text="year" />
+         <TableColumn fx:id="year" text="year" />
          <TableColumn fx:id="amountPaid" prefWidth="109.0" text="amount paid" />
-         <TableColumn fx:id="paidBy" prefWidth="103.0" text="paid by" />
-         <TableColumn fx:id="discount" prefWidth="83.0" text="discount" />
-         <TableColumn fx:id="poxing" prefWidth="231.0" text="poxing" />
+         <TableColumn fx:id="paidBy" prefWidth="79.0" text="paid by" />
+         <TableColumn fx:id="discount" prefWidth="92.0" text="discount" />
+         <TableColumn fx:id="poxing" text="poxing" />
          <TableColumn fx:id="vipBox" prefWidth="77.0" text="vip box" />
          <TableColumn fx:id="running" prefWidth="76.0" text="online" />
-         <TableColumn fx:id="daysRemind" prefWidth="105.0" text="days remind" />
-         <TableColumn fx:id="pendingBtn" prefWidth="98.0" text="pend" />
+         <TableColumn fx:id="daysRemind" prefWidth="82.0" text="days left" />
+         <TableColumn fx:id="pendingBtn" prefWidth="130.0" text="pend" />
       </columns>
    </TableView>
 </AnchorPane>

@@ -147,7 +147,8 @@ public class CustomerInfoController extends CommonClass implements Initializable
             tableView.setPlaceholder(new Label("MACMIILKU PAYMENTS MALEH.."));
         } else {
             amountPaid.setCellValueFactory(payment -> new SimpleStringProperty("$" + payment.getValue().getAmountPaid()));
-            discount.setCellValueFactory(payment -> new SimpleStringProperty("$" + payment.getValue().getDiscount()));
+            discount.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().getDiscount() == 0 ?
+                    payment.getValue().getDiscount() + "" : "$" + payment.getValue().getDiscount()));
             expDate.setCellValueFactory(new PropertyValueFactory<>("expDate"));
             month.setCellValueFactory(new PropertyValueFactory<>("month"));
             paidBy.setCellValueFactory(new PropertyValueFactory<>("paidBy"));
