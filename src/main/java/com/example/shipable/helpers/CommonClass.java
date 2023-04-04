@@ -37,7 +37,9 @@ public abstract class CommonClass {
 
     protected BorderPane borderPane;
     public boolean imageUploaded = false;
-    //protected Gym currentGym;
+
+    protected final ButtonType ok = new ButtonType("Haa");
+    protected final ButtonType no = new ButtonType("Maya");
     public final String[] images = {
             "/com/example/shipable/style/icons/loading_5.gif",
             "/com/example/gymproject/style/icons/loading_man.gif",
@@ -155,13 +157,14 @@ public abstract class CommonClass {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(message);
         alert.setTitle("War-gelin!");
+        alert.showAndWait();
         return alert;
     }
 
 
     public File selectedFile() {
         FileChooser.ExtensionFilter imageFilter
-                = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png","*.jpeg");
+                = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png", "*.jpeg");
 
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().add(imageFilter);
@@ -235,6 +238,7 @@ public abstract class CommonClass {
     public void setCustomer(Customers customer) {
         this.customer = customer;
     }
+
     public void setActiveUser(Users activeUser) {
         this.activeUser = activeUser;
     }

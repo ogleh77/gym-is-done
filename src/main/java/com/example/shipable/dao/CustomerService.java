@@ -59,7 +59,7 @@ public class CustomerService {
                         if (payment.isOnline() || payment.isPending()) {
                             throw new CustomException(payment.isOnline() ? onlinePaymentMessage : pendPaymentMessage);
                         }
-                        //        customerModel.delete(customer);
+                        customerModel.delete(customer);
                     }
                 }
                 allCustomersList.remove(customer);
@@ -76,6 +76,7 @@ public class CustomerService {
         if (offlineCustomers == null) {
             offlineCustomers = customerModel.fetchOfflineCustomers(activeUser);
         }
+        Collections.sort(offlineCustomers);
         return offlineCustomers;
     }
 

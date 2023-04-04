@@ -17,7 +17,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="home-pane" stylesheets="@../style/css/long-style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shipable.controllers.PaymentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" styleClass="home-pane" stylesheets="@../../style/css/long-style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shipable.controllers.main.PaymentController">
     <effect>
         <DropShadow height="35.82" radius="17.41" spread="0.01" width="35.82">
             <color>
@@ -29,15 +29,15 @@
         <Insets top="10.0" />
     </padding>
     <ImageView fitHeight="166.0" fitWidth="233.0" layoutX="242.0" layoutY="472.0" pickOnBounds="true" AnchorPane.bottomAnchor="122.0">
-        <Image url="@../style/icons/535-5355451_payment-success-illustration-png-transparent-png.png" />
+        <Image url="@../../style/icons/535-5355451_payment-success-illustration-png-transparent-png.png" />
     </ImageView>
     <Label layoutX="666.0" layoutY="155.0" text="exp date" textFill="#328ca8" AnchorPane.rightAnchor="469.0">
         <font>
             <Font name="Arial Bold" size="16.0" />
         </font>
     </Label>
-    <DatePicker fx:id="expDate" disable="true" layoutX="792.0" layoutY="144.0" prefHeight="36.0" prefWidth="313.0" promptText="dd-mm-yyyy" stylesheets="@../style/css/combo-style.css" AnchorPane.rightAnchor="95.0" />
-    <ComboBox fx:id="boxChooser" layoutX="946.0" layoutY="265.0" prefHeight="34.0" prefWidth="161.0" promptText="coose vip box" stylesheets="@../style/css/combo-style.css" AnchorPane.rightAnchor="93.0" />
+    <DatePicker fx:id="expDate" disable="true" layoutX="792.0" layoutY="144.0" prefHeight="36.0" prefWidth="313.0" promptText="dd-mm-yyyy" stylesheets="@../../style/css/combo-style.css" AnchorPane.rightAnchor="95.0" />
+    <ComboBox fx:id="boxChooser" layoutX="946.0" layoutY="265.0" prefHeight="34.0" prefWidth="161.0" promptText="coose vip box" stylesheets="@../../style/css/combo-style.css" AnchorPane.rightAnchor="93.0" />
     <VBox layoutX="845.0" layoutY="434.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="155.0">
         <effect>
             <DropShadow height="9.04" radius="4.762499999999999" spread="0.77" width="12.01">
@@ -47,21 +47,21 @@
             </DropShadow>
         </effect>
         <ImageView fx:id="imgView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true">
-            <Image url="@../style/icons/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpeg" />
+            <Image url="@../../style/icons/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpeg" />
         </ImageView>
     </VBox>
-    <JFXButton fx:id="createBtn" buttonType="RAISED" layoutX="738.0" layoutY="635.0" onAction="#createPaymentHandler" prefHeight="40.0" prefWidth="128.0" styleClass="btn-save" stylesheets="@../style/css/button-style.css" text="Create payment" textFill="#d0cbcb" AnchorPane.bottomAnchor="78.0" AnchorPane.rightAnchor="291.0">
+    <JFXButton fx:id="createBtn" buttonType="RAISED" layoutX="738.0" layoutY="635.0" onAction="#createPaymentHandler" prefHeight="40.0" prefWidth="128.0" styleClass="btn-save" stylesheets="@../../style/css/button-style.css" text="Create payment" textFill="#d0cbcb" AnchorPane.bottomAnchor="78.0" AnchorPane.rightAnchor="291.0">
         <font>
             <Font name="Arial Black" size="12.0" />
         </font>
     </JFXButton>
-    <JFXButton buttonType="RAISED" layoutX="941.0" layoutY="635.0" prefHeight="40.0" prefWidth="120.0" styleClass="btn-reset" stylesheets="@../style/css/button-style.css" text="Reset" textFill="WHITE" AnchorPane.bottomAnchor="78.0" AnchorPane.rightAnchor="88.0">
+    <JFXButton buttonType="RAISED" layoutX="941.0" layoutY="635.0" prefHeight="40.0" prefWidth="120.0" styleClass="btn-reset" stylesheets="@../../style/css/button-style.css" text="Reset" textFill="WHITE" AnchorPane.bottomAnchor="78.0" AnchorPane.rightAnchor="88.0">
         <font>
             <Font size="15.0" />
         </font>
         <graphic>
             <ImageView fitHeight="28.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@../style/icons/icons8-clear-symbol-30.png" />
+                <Image url="@../../style/icons/icons8-clear-symbol-30.png" />
             </ImageView>
         </graphic>
     </JFXButton>
@@ -71,7 +71,7 @@
             <Font name="Arial Bold" size="16.0" />
         </font>
     </Label>
-    <ComboBox fx:id="paidBy" layoutX="946.0" layoutY="312.0" prefHeight="34.0" prefWidth="161.0" promptText="paid by" stylesheets="@../style/css/combo-style.css" AnchorPane.rightAnchor="93.0" />
+    <ComboBox fx:id="paidBy" layoutX="946.0" layoutY="312.0" prefHeight="34.0" prefWidth="161.0" promptText="paid by" stylesheets="@../../style/css/combo-style.css" AnchorPane.rightAnchor="93.0" />
     <Label fx:id="paymentInfo" alignment="CENTER" layoutX="159.0" layoutY="653.0" prefHeight="24.0" prefWidth="374.0" text="BUUXI QAYBTA PAYMENT KA OO QUDHA" textFill="#328ca8">
         <font>
             <Font name="Verdana Bold" size="15.0" />
@@ -119,7 +119,7 @@
             <Font name="Arial Bold" size="16.0" />
         </font>
     </JFXCheckBox>
-    <Label fx:id="discountValidation" layoutX="792.0" layoutY="237.0" prefHeight="20.0" prefWidth="313.0" styleClass="error-message-style" stylesheets="@../style/css/message.css" text="Qimo dhimista u badani waa" textFill="#c94141" visible="false">
+    <Label fx:id="discountValidation" layoutX="792.0" layoutY="237.0" prefHeight="20.0" prefWidth="313.0" styleClass="error-message-style" stylesheets="@../../style/css/message.css" text="Qimo dhimista u badani waa" textFill="#c94141" visible="false">
         <font>
             <Font name="Arial Bold" size="12.0" />
         </font>

@@ -22,14 +22,17 @@ public class PaymentService {
         }
 
     }
+
     public static void holdPayment(Payments payment, int allowedDays) throws SQLException {
         try {
             LocalDate exp = payment.getExpDate();
             LocalDate pendingDate = LocalDate.now();
             int daysRemind = Period.between(pendingDate, exp).getDays();
-
+            if (Period.between(pendingDate, exp).getMonths() > 0) {
+                daysRemind = 30;
+            }
             if (daysRemind <= allowedDays) {
-                throw new CustomException("Fadlan lama xidhi karo payment kan waayo\n" + "wuxu ka hoseya wakhtiga loo asteyey oo ah " + allowedDays + " malmood " +
+                throw new CustomException("Fadlan lama xidhi karo payment kan waayo\n" + "wuxu ka hoseya wakhtiga loo asteyey oo ah " + allowedDays + " cisho " +
                         "Halka payment kana u hadhay " + daysRemind + " Malmood");
             }
             paymentModel.holdPayment(payment, daysRemind);
@@ -63,6 +66,7 @@ public class PaymentService {
     public static ObservableList<Payments> fetchCustomersOfflinePayment(String customerPhone) throws SQLException {
         return paymentModel.fetchCustomersOfflinePayment(customerPhone);
     }
+
     public static ObservableList<Payments> fetchQualifiedOfflinePayment(String customerPhone, String fromDate, String toDate) throws SQLException {
         return paymentModel.fetchQualifiedOfflinePayment(customerPhone, fromDate, toDate);
     }

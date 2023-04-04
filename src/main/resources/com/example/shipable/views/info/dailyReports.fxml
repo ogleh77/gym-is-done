@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" styleClass="home-pane" stylesheets="@../../style/css/long-style.css"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.shipable.controllers.info.DailyReportController">
+    <HBox alignment="CENTER" layoutX="105.0" layoutY="28.0" prefHeight="36.0" prefWidth="1016.0" spacing="500.0"
+          styleClass="top-pane" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+        <Label prefHeight="33.0" prefWidth="181.0" styleClass="top-label" text="REPORTS PAGE" textFill="#fffbfb">
+            <font>
+                <Font name="Verdana" size="19.0"/>
+            </font>
+        </Label>
+    </HBox>
+    <Label layoutX="50.0" layoutY="87.0" prefHeight="24.0" prefWidth="199.0" text="Report ka week-gii u danbeyey"
+           textFill="#6b6565">
+        <font>
+            <Font name="Tahoma Bold" size="12.0"/>
+        </font>
+    </Label>
+    <TableView fx:id="dailyTbView" layoutX="50.0" layoutY="122.0" prefHeight="225.0" prefWidth="616.0"
+               stylesheets="@../../style/css/home-table.css" AnchorPane.bottomAnchor="413.0"
+               AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="534.0" AnchorPane.topAnchor="122.0">
+        <columns>
+            <TableColumn fx:id="dailyReportDay" prefWidth="127.0" text="report day"/>
+            <TableColumn fx:id="totalRegister" prefWidth="169.0" text="total of registration"/>
+            <TableColumn fx:id="totalMale" prefWidth="103.0" text="total male"/>
+            <TableColumn fx:id="totalFemale" prefWidth="106.0" text="total female"/>
+            <TableColumn fx:id="totalVipBox" prefWidth="109.0" text="total vip box"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    <Label layoutX="774.0" layoutY="396.0" prefHeight="24.0" prefWidth="398.0"
+           stylesheets="@../../style/css/message.css" text="Halkan waxaad ka heli kartaa " textFill="#6b6565">
+        <font>
+            <Font name="Tahoma Bold" size="16.0"/>
+        </font>
+    </Label>
+    <DatePicker fx:id="startDate" layoutX="98.0" layoutY="409.0" prefHeight="36.0" prefWidth="193.0"
+                stylesheets="@../../style/css/combo-style.css"/>
+    <DatePicker fx:id="endDate" layoutX="340.0" layoutY="409.0" prefHeight="36.0" prefWidth="193.0"
+                stylesheets="@../../style/css/combo-style.css"/>
+    <JFXButton fx:id="searchBtn" layoutX="548.0" layoutY="404.0" onAction="#searchHandler" prefHeight="40.0"
+               prefWidth="109.0" styleClass="btn-upload-image" stylesheets="@../../style/css/button-style.css"
+               text="Raadi">
+        <graphic>
+            <ImageView fx:id="imgViewSearch" fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../style/icons/icons8-search-50.png"/>
+            </ImageView>
+        </graphic>
+    </JFXButton>
+    <Label layoutX="52.0" layoutY="415.0" prefHeight="24.0" prefWidth="39.0" text="From" textFill="#1d906c">
+        <font>
+            <Font name="Tahoma Bold" size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="308.0" layoutY="415.0" prefHeight="24.0" prefWidth="19.0" text="To" textFill="#1d906c">
+        <font>
+            <Font name="Tahoma Bold" size="14.0"/>
+        </font>
+    </Label>
+    <TableView fx:id="reportTbView" layoutX="50.0" layoutY="470.0" prefHeight="225.0" prefWidth="616.0"
+               stylesheets="@../../style/css/home-table.css">
+        <columns>
+            <TableColumn fx:id="reportTotalDay" prefWidth="127.0" text="report day"/>
+            <TableColumn fx:id="reportTotalReg" prefWidth="169.0" text="total of registration"/>
+            <TableColumn fx:id="reportTotalMale" prefWidth="103.0" text="total male"/>
+            <TableColumn fx:id="reportTotalFemale" prefWidth="106.0" text="total female"/>
+            <TableColumn fx:id="reportTotalVip" prefWidth="109.0" text="total vip box"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="835.0" layoutY="229.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../../style/icons/images.png"/>
+    </ImageView>
+    <Label layoutX="774.0" layoutY="419.0" prefHeight="24.0" prefWidth="271.0" styleClass="header-message-style"
+           stylesheets="@../../style/css/message.css" text="Xog kobistii wiigi u danbayey iyo" textFill="#6b6565">
+        <font>
+            <Font name="Tahoma Bold" size="15.0"/>
+        </font>
+    </Label>
+    <Label layoutX="774.0" layoutY="442.0" prefHeight="24.0" prefWidth="187.0" styleClass="header-message-style"
+           stylesheets="@../../style/css/message.css" text="Xogta aad radiso" textFill="#6b6565">
+        <font>
+            <Font name="Tahoma Bold" size="15.0"/>
+        </font>
+    </Label>
+    <effect>
+        <DropShadow height="29.9" radius="15.1875" width="32.85">
+            <color>
+                <Color red="0.24705882370471954" green="0.6117647290229797" blue="0.9098039269447327"/>
+            </color>
+        </DropShadow>
+    </effect>
+</AnchorPane>

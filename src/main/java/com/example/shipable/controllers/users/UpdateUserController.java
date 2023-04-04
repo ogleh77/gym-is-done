@@ -154,6 +154,8 @@ public class UpdateUserController extends CommonClass implements Initializable {
         warningMessage.setVisible(true);
         uploadBtn.setVisible(false);
         imageUploaded = true;
+        shift.setValue(user.getShift());
+        shift.setEditable(false);
     }
 
 

@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -98,16 +99,21 @@ public class RegistrationController extends CommonClass implements Initializable
             registerBtn.setGraphic(getFirstImage("/com/example/shipable/style/icons/icons8-save-30.png"));
             registerBtn.setText(isCustomerNew ? "Payment" : "Updated");
             if (done && isCustomerNew) {
+                borderPane.getLeft().setDisable(true);
                 paymentMethod();
             } else if (done) {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Updated successfully",
-                        new ButtonType("Back to home", ButtonBar.ButtonData.YES));
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Updated successfully", new ButtonType("Back to home", ButtonBar.ButtonData.YES));
 
-                Optional<ButtonType>result=alert.showAndWait();
+                Optional<ButtonType> result = alert.showAndWait();
 
-                if(result.isPresent()&&result.get().getButtonData().isDefaultButton()){
-                    // TODO: 03/04/2023 Implement back to home insha Allah
-                }else {
+                if (result.isPresent() && result.get().getButtonData().isDefaultButton()) {
+                    try {
+                        // TODO: 03/04/2023 "Something is wrong backing to home..
+                        backGoToHome();
+                    } catch (IOException ex) {
+                        errorMessage(ex.getMessage());
+                    }
+                } else {
                     alert.close();
                 }
             }
@@ -116,7 +122,6 @@ public class RegistrationController extends CommonClass implements Initializable
 
     @FXML
     void customerSaveHandler() throws IOException {
-
         if (done && isCustomerNew) {
             openPayment();
         } else {
@@ -305,12 +310,11 @@ public class RegistrationController extends CommonClass implements Initializable
     }
 
     private void openPayment() throws IOException {
-        System.out.println("Payment");
-//        FXMLLoader loader = openNormalWindow("/com/example/gymproject/views/main/payments.fxml", borderPane);
-//        PaymentController controller = loader.getController();
-//        controller.setCustomer(customer);
-//        controller.setActiveUser(activeUser);
-//        controller.setBorderPane(borderPane);
+        FXMLLoader loader = openNormalWindow("/com/example/shipable/views/main/payments.fxml", borderPane);
+        PaymentController controller = loader.getController();
+        controller.setCustomer(customer);
+        controller.setActiveUser(activeUser);
+        controller.setBorderPane(borderPane);
     }
 
     private void clear() {
@@ -333,6 +337,13 @@ public class RegistrationController extends CommonClass implements Initializable
                 female.setSelected(false);
             }
         }
+    }
+
+    private void backGoToHome() throws IOException {
+        FXMLLoader loader = openNormalWindow("/com/example/shipable/views/main/home.fxml", borderPane);
+        HomeController controller = loader.getController();
+        controller.setActiveUser(activeUser);
+        controller.setBorderPane(borderPane);
     }
 
 

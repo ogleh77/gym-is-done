@@ -5,13 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bcd583-cef6-42d9-9be8-1faf0769faec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/CardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/CustomerInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/DailyReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/OutDatedController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/DashboardMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UserChooserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/dashboard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info/customer-card.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info/customer-info.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info/dailyReports.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info/outdated.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/dashboard-menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users/user-chooser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/37994f5f-de79-4915-b585-82f38b6197c0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dc1d9d45-f966-4f04-859e-b6fdf780bdf8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/df3aac08-69cf-4206-b30a-1b505c196d03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/df3aac08-69cf-4206-b30a-1b505c196d03.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/notdone/BackupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/registrations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/registrations.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/css/dashboard-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/css/dashboard-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/css/long-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/css/long-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/notdone/backup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/payments.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/payments.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,34 +71,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mrd/Desktop/Desktop/shipable/src/main/resources/com/example/shipable/views/users&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/models" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/entities" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/dao" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/notdone" />
@@ -75,12 +107,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="com.example.shipable.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.shipable.HelloApplication" />
       <module name="shipable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.shipable.controllers.*" />
+          <option name="PATTERN" value="com.example.shipable.controllers.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,7 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.example.shipable.HelloApplication" />
+        <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -104,7 +136,10 @@
       <updated>1680454845918</updated>
       <workItem from="1680454848148" duration="340000" />
       <workItem from="1680455222761" duration="6388000" />
-      <workItem from="1680497796964" duration="12704000" />
+      <workItem from="1680497796964" duration="12808000" />
+      <workItem from="1680515921539" duration="8884000" />
+      <workItem from="1680529323358" duration="4347000" />
+      <workItem from="1680592634512" duration="2324000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,10 @@
     -fx-background-radius: 5;
 }
 
-
+.menu-center:hover{
+    -fx-background-color: #e8e0e0;
+        -fx-background-radius: 5;
+}
 .text-field {
     -fx-background-color: #F6F6F6;
     -fx-prompt-text-fill: gray;

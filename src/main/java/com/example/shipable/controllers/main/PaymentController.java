@@ -1,4 +1,4 @@
-package com.example.shipable.controllers;
+package com.example.shipable.controllers.main;
 
 import animatefx.animation.FadeIn;
 import com.example.shipable.dao.GymService;
@@ -119,8 +119,10 @@ public class PaymentController extends CommonClass implements Initializable {
             if (done) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION, customer.getFirstName() + " Waxad u samaysay payment cusub", ok);
                 Optional<ButtonType> result = alert.showAndWait();
+                borderPane.getLeft().setDisable(false);
                 if (result.isPresent() && result.get() == ok) {
                     try {
+
                         backGoToHome();
                     } catch (IOException ex) {
                         errorMessage(ex.getMessage());
@@ -134,6 +136,7 @@ public class PaymentController extends CommonClass implements Initializable {
 
     @FXML
     void createPaymentHandler() {
+
         if (isValid(getMandatoryFields(), null)) {
             if (start) {
                 service.restart();
@@ -272,17 +275,15 @@ public class PaymentController extends CommonClass implements Initializable {
     }
 
     private void backGoToHome() throws IOException {
-        System.out.println("Bcking home");
-//        FXMLLoader loader = openNormalWindow("/com/example/gymproject/views/main/home.fxml", borderPane);
-//        HomeController controller = loader.getController();
-//        controller.setActiveUser(activeUser);
-//        controller.setBorderPane(borderPane);
+        FXMLLoader loader = openNormalWindow("/com/example/shipable/views/main/home.fxml", borderPane);
+        HomeController controller = loader.getController();
+        controller.setActiveUser(activeUser);
+        controller.setBorderPane(borderPane);
     }
 
     private final Service<Void> service = new Service<>() {
         @Override
         protected Task<Void> createTask() {
-            // TODO: 23/03/2023  Discount validation insha Allah
             return new Task<>() {
                 @Override
                 protected Void call() {
@@ -296,7 +297,6 @@ public class PaymentController extends CommonClass implements Initializable {
                         if (boxChooser.getValue() != null && !boxChooser.getValue().getBoxName().matches("remove box")) {
                             payment.setBox(boxChooser.getValue());
                         }
-
                         customer.getPayments().add(0, payment);
                         PaymentService.insertPayment(customer);
                         Thread.sleep(1000);

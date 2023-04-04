@@ -52,6 +52,12 @@
     -fx-text-fill: #efe7e7;
 
 }
+.side-btn-setting {
+    -fx-pref-width: 176;
+    -fx-pref-height: 46;
+    -fx-background-color: #328ca8;
+    -fx-text-fill: #efe7e7;
+}
 
 .side-btn:hover {
     -fx-background-color: #afd6e3;

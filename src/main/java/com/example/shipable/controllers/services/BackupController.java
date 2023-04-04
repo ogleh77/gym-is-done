@@ -1,4 +1,4 @@
-package com.example.shipable.controllers.notdone;
+package com.example.shipable.controllers.services;
 
 import com.example.shipable.dao.BackupService;
 import com.example.shipable.helpers.CommonClass;
@@ -116,7 +116,7 @@ public class BackupController extends CommonClass implements Initializable {
                 if (isValid(getMandatoryFields(), null)) {
                     pathSelector();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 errorMessage(e.getMessage());
             }
         }
@@ -126,24 +126,19 @@ public class BackupController extends CommonClass implements Initializable {
     void restoreHandler() {
         restorePath = listView.getSelectionModel().getSelectedItem();
         if (restorePath == null) {
-            if (restorePathConfirm() == null) {
-                return;
+            restorePathConfirm();
+        }
+        if (restorePath != null)
+            if (start) {
+                restoreService.restart();
+                restoreBtn.setGraphic(getLoadingImageView());
+                restoreBtn.setText("Restoring");
             } else {
-                restorePath = restorePathConfirm().getAbsolutePath();
+                restoreService.start();
+                restoreBtn.setGraphic(getLoadingImageView());
+                restoreBtn.setText("Restoring");
+                start = true;
             }
-        }
-
-
-        if (start) {
-            restoreService.restart();
-            restoreBtn.setGraphic(getLoadingImageView());
-            restoreBtn.setText("Restoring");
-        } else {
-            restoreService.start();
-            restoreBtn.setGraphic(getLoadingImageView());
-            restoreBtn.setText("Restoring");
-            start = true;
-        }
     }
 
     @FXML
@@ -155,7 +150,6 @@ public class BackupController extends CommonClass implements Initializable {
                 return;
             }
             deleteConfirm(path);
-
         }
     }
 
@@ -236,15 +230,19 @@ public class BackupController extends CommonClass implements Initializable {
         }
     }
 
-    private File restorePathConfirm() {
+    private void restorePathConfirm() {
 
         FileChooser fileChooser = new FileChooser();
-//        FileChooser.ExtensionFilter extFilter =
-//                new FileChooser.ExtensionFilter("TEXT files (*.txt)", "*");
-        // fileChooser.getExtensionFilters().add(extFilter);
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("TEXT files (*.txt)", "*");
+        //fileChooser.getExtensionFilters().add(extFilter);
 
 
-        return fileChooser.showOpenDialog(null);
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            restorePath = selectedFile.getAbsolutePath();
+        }
     }
 
     private void openLoginWindow() {
