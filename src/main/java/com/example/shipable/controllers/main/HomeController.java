@@ -50,7 +50,7 @@ public class HomeController extends CommonClass implements Initializable {
     @FXML
     private TextField search;
     @FXML
-    private TableColumn<Customers, Double> weight;
+    private TableColumn<Customers, String> weight;
 
     private ObservableList<Customers> customersList;
     private FilteredList<Customers> filteredList;
@@ -76,7 +76,7 @@ public class HomeController extends CommonClass implements Initializable {
             searchFilter();
             usersCount.setText(nextUserId == 1 ? nextUserId + " user" : nextUserId + " users");
             customersCount.setText(nextCustomerId == 1 ? nextCustomerId + " member" : nextCustomerId + " members");
-         });
+        });
     }
 
     private void initTable() {
@@ -85,14 +85,14 @@ public class HomeController extends CommonClass implements Initializable {
         phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         gander.setCellValueFactory(new PropertyValueFactory<>("gander"));
         shift.setCellValueFactory(new PropertyValueFactory<>("shift"));
-        weight.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        weight.setCellValueFactory(customers -> new SimpleStringProperty(customers.getValue().getWeight() + "Kg"));
         address.setCellValueFactory(new PropertyValueFactory<>("address"));
         imagePath.setCellValueFactory(customers ->
                 new SimpleStringProperty(customers.getValue().getImage() == null ? "x"
                         : "√"));
 
         if (customersList.isEmpty()) {
-            tableView.setPlaceholder(new Label("MACMIIL KUMA DIWAAN GASHANA"));
+            tableView.setPlaceholder(new Label("MACAAMIIL KUUMA DIWAAN GASHANA."));
         } else {
             tableView.setItems(customersList);
         }
@@ -136,6 +136,8 @@ public class HomeController extends CommonClass implements Initializable {
             RegistrationController controller = loader.getController();
             controller.setCustomer(tableView.getSelectionModel().getSelectedItem());
             controller.setActiveUser(activeUser);
+            controller.setBorderPane(borderPane);
+
         }
     }
 

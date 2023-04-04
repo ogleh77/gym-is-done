@@ -44,7 +44,7 @@
                 <TableColumn fx:id="shift" prefWidth="107.0" text="shift" />
                 <TableColumn fx:id="address" prefWidth="120.0" text="address" />
                 <TableColumn fx:id="weight" prefWidth="100.0" text="weight" />
-                <TableColumn fx:id="imagePath" prefWidth="245.0" text="image path" />
+                <TableColumn fx:id="imagePath" prefWidth="231.0" text="image path" />
             </columns>
         </TableView>
     </VBox>

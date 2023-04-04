@@ -16,6 +16,7 @@ import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,6 +26,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -68,8 +70,13 @@ public class DashboardController extends CommonClass implements Initializable {
 
     private final Gym currentGym;
     private ObservableList<Customers> warningList;
-    private boolean visible = false;
     private Stage dashboardStage;
+    private boolean visible = false;
+
+    @FXML
+    private HBox topPane;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     public DashboardController() throws SQLException {
         this.currentGym = GymService.getGym();
@@ -83,6 +90,9 @@ public class DashboardController extends CommonClass implements Initializable {
             activeUserName.textProperty().bind(activeUser.usernameProperty());
             dashboardStage = (Stage) activeProfile.getScene().getWindow();
             borderPane.setLeft(null);
+
+            borderPaneDrag();
+            borderPaneDropped();
         });
         try {
             dashboard();
@@ -97,7 +107,9 @@ public class DashboardController extends CommonClass implements Initializable {
             SlideOutLeft slideOutLeft = new SlideOutLeft();
             slideOutLeft.setNode(sidePane);
             slideOutLeft.play();
-            slideOutLeft.setOnFinished(e -> borderPane.setLeft(null));
+            slideOutLeft.setOnFinished(e -> {
+                borderPane.setLeft(null);
+            });
         } else {
             new SlideInLeft(sidePane).play();
             borderPane.setLeft(sidePane);
@@ -112,6 +124,8 @@ public class DashboardController extends CommonClass implements Initializable {
         UpdateUserController controller = loader.getController();
         controller.setActiveUser(activeUser);
         Stage stage = new Stage(StageStyle.UNDECORATED);
+        stage.initOwner(activeProfile.getScene().getWindow());
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
     }
@@ -304,4 +318,26 @@ public class DashboardController extends CommonClass implements Initializable {
 
         } else alert.close();
     }
+
+
+    private void borderPaneDrag() {
+        topPane.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = dashboardStage.getX() - event.getScreenX();
+                yOffset = dashboardStage.getY() - event.getScreenY();
+            }
+        });
+    }
+
+    private void borderPaneDropped() {
+        topPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dashboardStage.setX(event.getScreenX() + xOffset);
+                dashboardStage.setY(event.getScreenY() + yOffset);
+            }
+        });
+    }
 }
+

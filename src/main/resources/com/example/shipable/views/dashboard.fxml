@@ -19,7 +19,7 @@
 
 <BorderPane fx:id="borderPane" prefHeight="802.0" prefWidth="1403.0" styleClass="dash-pane" stylesheets="@../style/css/dashboard-style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shipable.controllers.DashboardController">
     <top>
-        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="top-pane" BorderPane.alignment="CENTER">
+        <HBox fx:id="topPane" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="top-pane" BorderPane.alignment="CENTER">
             <HBox prefHeight="45.0" prefWidth="535.0">
                 <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="604.0" spacing="10.0">
                     <HBox fx:id="menuHBox" alignment="CENTER" onMouseClicked="#menuClicked" prefHeight="31.0" prefWidth="40.0" styleClass="top-menu-hover" visible="false">
@@ -41,19 +41,16 @@
                 <HBox.margin>
                     <Insets left="50.0" />
                 </HBox.margin>
-                <Circle fx:id="activeProfile" fill="DODGERBLUE" radius="19.0" stroke="#048be4" strokeLineCap="ROUND" strokeWidth="0.0">
-                    <HBox.margin>
-                        <Insets bottom="1.0" top="1.0" />
-                    </HBox.margin>
-                </Circle>
-                <Label fx:id="activeUserName" onMouseClicked="#profileHandler" prefHeight="26.0" prefWidth="240.0" styleClass="profile-hover" text="Mohamed Ogleh" textFill="#fffbfb">
-                    <font>
-                        <Font name="Verdana" size="17.0" />
-                    </font>
-                    <HBox.margin>
-                        <Insets left="10.0" />
-                    </HBox.margin>
-                </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="301.0" spacing="10.0">
+               <children>
+                      <Circle fx:id="activeProfile" fill="DODGERBLUE" radius="19.0" stroke="#048be4" strokeLineCap="ROUND" strokeWidth="0.0" />
+                      <Label fx:id="activeUserName" onMouseClicked="#profileHandler" styleClass="profile-hover" text="Mohamed Ogleh" textFill="#fffbfb">
+                          <font>
+                              <Font name="Verdana" size="17.0" />
+                          </font>
+                      </Label>
+               </children>
+            </HBox>
                 <StackPane fx:id="warningStack" onMouseClicked="#warningHandler" prefHeight="41.0" prefWidth="55.0" styleClass="top-menu-hover">
                     <HBox.margin>
                         <Insets bottom="2.0" left="15.0" top="2.0" />

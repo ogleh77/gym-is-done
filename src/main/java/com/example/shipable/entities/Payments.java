@@ -42,7 +42,7 @@ public class Payments {
         pendingBtn.setStyle(pendStyle);
         if (!this.online.get() && !this.pending.get()) {
             this.pendingBtn.setText("----");
-            //this.pendingBtn.setDisable(true);
+            this.pendingBtn.setDisable(true);
             this.pendingBtn.setStyle(unPendStyle);
         } else if (this.isPending() && !this.isOnline()) {
             this.getPendingBtn().setStyle(unPendStyle);

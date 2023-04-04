@@ -53,7 +53,7 @@
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <VBox layoutX="845.0" layoutY="139.0" prefHeight="161.0" prefWidth="210.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="141.0">
+    <VBox layoutX="849.0" layoutY="178.0" prefHeight="161.0" prefWidth="210.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="137.0">
         <effect>
             <DropShadow height="35.66" radius="15.864999999999998" spread="0.77" width="29.8">
                 <color>
@@ -90,7 +90,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
         </columnResizePolicy>
     </TableView>
-    <Label layoutX="878.0" layoutY="309.0" text="customer profile" textFill="#328ca8" AnchorPane.rightAnchor="174.0">
+    <Label layoutX="882.0" layoutY="348.0" text="customer profile" textFill="#328ca8" AnchorPane.rightAnchor="170.0">
         <font>
             <Font name="Verdana Bold" size="16.0" />
         </font>
@@ -164,25 +164,25 @@
       </font>
    </Label>
    <Circle fill="#6d7883" layoutX="123.0" layoutY="465.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#afd6e3" height="10.0" layoutX="840.0" layoutY="382.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
-   <Label layoutX="859.0" layoutY="378.0" prefHeight="20.0" prefWidth="182.0" text="Wa la hakin karaa  (HAKI)" textFill="#6c7172">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#afd6e3" height="10.0" layoutX="741.0" layoutY="426.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
+   <Label layoutX="760.0" layoutY="422.0" prefHeight="20.0" prefWidth="182.0" text="Wa la hakin karaa  (HAKI)" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="13.0" />
       </font>
    </Label>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff521f" height="10.0" layoutX="840.0" layoutY="410.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
-   <Label layoutX="859.0" layoutY="406.0" prefHeight="20.0" prefWidth="182.0" text="Wakhtiga ka dhacay    (---)" textFill="#6c7172">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff521f" height="10.0" layoutX="945.0" layoutY="428.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
+   <Label layoutX="964.0" layoutY="423.0" prefHeight="20.0" prefWidth="182.0" text="Wakhtiga ka dhacay    (---)" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="13.0" />
       </font>
    </Label>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e42c10" height="10.0" layoutX="840.0" layoutY="440.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
-   <Label layoutX="859.0" layoutY="436.0" prefHeight="20.0" prefWidth="182.0" text="Wa hakisan yahay     (FUR)" textFill="#6c7172">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e42c10" height="10.0" layoutX="741.0" layoutY="456.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
+   <Label layoutX="760.0" layoutY="451.0" prefHeight="20.0" prefWidth="182.0" text="Wa hakisan yahay     (FUR)" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="13.0" />
       </font>
    </Label>
-   <Label layoutX="840.0" layoutY="350.0" prefHeight="20.0" prefWidth="167.0" text="Payment button guide" textFill="#242525">
+   <Label layoutX="741.0" layoutY="394.0" prefHeight="20.0" prefWidth="167.0" text="Payment button guide" textFill="#505454">
       <font>
          <Font name="Verdana" size="15.0" />
       </font>
