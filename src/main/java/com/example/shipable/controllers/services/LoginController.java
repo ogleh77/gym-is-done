@@ -11,12 +11,15 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -123,14 +126,14 @@ public class LoginController extends CommonClass implements Initializable {
     };
 
     private void openSplash() throws IOException {
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/gymproject/views/service/splash-screen.fxml"));
-//        Scene scene = new Scene(loader.load());
-//        SplashScreenController controller = loader.getController();
-//        controller.setActiveUser(userCombo.getValue());
-//        Stage stage = new Stage();
-//        stage.setScene(scene);
-//        stage.initStyle(StageStyle.UNDECORATED);
-//        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/shipable/views/service/splash-screen.fxml"));
+        Scene scene = new Scene(loader.load());
+        SplashScreenController controller = loader.getController();
+        controller.setActiveUser(userCombo.getValue());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
     }
 
     private void closeStage() {

@@ -45,8 +45,8 @@ public abstract class CommonClass {
     protected final ButtonType no = new ButtonType("Maya");
     public final String[] images = {
             "/com/example/shipable/style/icons/loading_5.gif",
-            "/com/example/gymproject/style/icons/loading_man.gif",
-            "/com/example/gymproject/style/icons/loading_girl.gif"
+            "/com/example/shipable/style/icons/loading_man.gif",
+            "/com/example/shipable/style/icons/loading_girl.gif"
     };
 
     public CommonClass() {
