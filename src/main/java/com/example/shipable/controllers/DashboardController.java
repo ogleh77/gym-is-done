@@ -16,7 +16,6 @@ import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,7 +25,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -107,9 +105,7 @@ public class DashboardController extends CommonClass implements Initializable {
             SlideOutLeft slideOutLeft = new SlideOutLeft();
             slideOutLeft.setNode(sidePane);
             slideOutLeft.play();
-            slideOutLeft.setOnFinished(e -> {
-                borderPane.setLeft(null);
-            });
+            slideOutLeft.setOnFinished(e -> borderPane.setLeft(null));
         } else {
             new SlideInLeft(sidePane).play();
             borderPane.setLeft(sidePane);
@@ -161,8 +157,7 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void homeHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/main/home.fxml", borderPane,
-                sidePane, null, warningStack);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/main/home.fxml", borderPane, sidePane, null, warningStack);
         HomeController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
@@ -179,8 +174,7 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void outdatedHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/info/outdated.fxml", borderPane,
-                sidePane, null, warningStack);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/info/outdated.fxml", borderPane, sidePane, null, warningStack);
         OutDatedController controller = loader.getController();
         controller.setActiveUser(activeUser);
     }
@@ -188,8 +182,7 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void reportHandler() throws IOException {
-        openWindow("/com/example/shipable/views/info/dailyReports.fxml", borderPane,
-                sidePane, null, warningStack);
+        openWindow("/com/example/shipable/views/info/dailyReports.fxml", borderPane, sidePane, null, warningStack);
     }
 
     @FXML
@@ -249,10 +242,7 @@ public class DashboardController extends CommonClass implements Initializable {
         super.setActiveUser(activeUser);
         activeUserName.setText(activeUser.getUsername() + " [" + activeUser.getRole() + "]");
         URL url;
-        final String[] profileImages = {
-                "/com/example/gymproject/style/icons/man-profile.jpeg",
-                "/com/example/gymproject/style/icons/woman-hijap.jpeg"
-        };
+        final String[] profileImages = {"/com/example/gymproject/style/icons/man-profile.jpeg", "/com/example/gymproject/style/icons/woman-hijap.jpeg"};
 
         if (activeUser.getGender().equals("Male")) {
             if (activeUser.getImage() == null) {
@@ -321,22 +311,16 @@ public class DashboardController extends CommonClass implements Initializable {
 
 
     private void borderPaneDrag() {
-        topPane.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = dashboardStage.getX() - event.getScreenX();
-                yOffset = dashboardStage.getY() - event.getScreenY();
-            }
+        topPane.setOnMousePressed(event -> {
+            xOffset = dashboardStage.getX() - event.getScreenX();
+            yOffset = dashboardStage.getY() - event.getScreenY();
         });
     }
 
     private void borderPaneDropped() {
-        topPane.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                dashboardStage.setX(event.getScreenX() + xOffset);
-                dashboardStage.setY(event.getScreenY() + yOffset);
-            }
+        topPane.setOnMouseDragged(event -> {
+            dashboardStage.setX(event.getScreenX() + xOffset);
+            dashboardStage.setY(event.getScreenY() + yOffset);
         });
     }
 }
