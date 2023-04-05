@@ -19,6 +19,7 @@ public class Payments {
     private final SimpleDoubleProperty discount = new SimpleDoubleProperty();
     private final SimpleBooleanProperty poxing = new SimpleBooleanProperty();
     private Box box;
+    private String customerFK;
     private final SimpleBooleanProperty online = new SimpleBooleanProperty();
     private final SimpleBooleanProperty pending = new SimpleBooleanProperty();
     private final JFXButton pendingBtn;
@@ -34,6 +35,7 @@ public class Payments {
         this.setPaidBy(paidBy);
         this.setDiscount(discount);
         this.setPoxing(poxing);
+        this.customerFK = customerFK;
         this.setOnline(online);
         this.setPending(pending);
         this.pendingBtn = new JFXButton("Haki");
@@ -79,6 +81,10 @@ public class Payments {
     }
     public void setYear(String year) {
         this.year.set(year);
+    }
+
+    public String getYear() {
+        return year.get();
     }
 
     public double getAmountPaid() {

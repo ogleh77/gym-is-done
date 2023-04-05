@@ -5,44 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bcd583-cef6-42d9-9be8-1faf0769faec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/DashboardMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/DashboardMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/SplashScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UserChooserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UserChooserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/BoxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/BoxService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Box.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Customers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/DailyReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/DailyReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Gym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Gym.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Payments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Payments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/CommonClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/BackupModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/BackupModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/BoxModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/BoxModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/CustomerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/CustomerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/DailyReportModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/DailyReportModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/GymModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/GymModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/PaymentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/PaymentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/css/small-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/css/small-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-info-squared-50 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/info.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-info-squared-50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/info-black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users/user-update.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users/user-update.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +20,7 @@
       <list>
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -77,6 +44,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "dart.analysis.tool.window.visible": "false",
     "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable/controllers/info",
     "nodejs_package_manager_path": "npm",
@@ -106,8 +76,14 @@
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/notdone" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.shipable.models" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.shipable.HelloApplication" />
       <module name="shipable" />
@@ -121,9 +97,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentModelTest.makeReport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shipable" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.shipable.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.shipable.models" />
+      <option name="MAIN_CLASS_NAME" value="com.example.shipable.models.PaymentModelTest" />
+      <option name="METHOD_NAME" value="makeReport" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="JUnit.PaymentModelTest.makeReport" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +137,7 @@
       <workItem from="1680602923733" duration="8514000" />
       <workItem from="1680613706417" duration="1634000" />
       <workItem from="1680678831031" duration="151000" />
-      <workItem from="1680688765080" duration="3317000" />
+      <workItem from="1680688765080" duration="4133000" />
     </task>
     <servers />
   </component>
