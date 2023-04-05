@@ -9,6 +9,7 @@ import com.example.shipable.controllers.info.WarningController;
 import com.example.shipable.controllers.main.DashboardMenuController;
 import com.example.shipable.controllers.main.HomeController;
 import com.example.shipable.controllers.main.RegistrationController;
+import com.example.shipable.controllers.services.BackupController;
 import com.example.shipable.controllers.users.UpdateUserController;
 import com.example.shipable.controllers.users.UserChooserController;
 import com.example.shipable.dao.GymService;
@@ -187,7 +188,7 @@ public class DashboardController extends CommonClass implements Initializable {
         RegistrationController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
-     }
+    }
 
     @FXML
     void outdatedHandler() throws IOException {
@@ -206,8 +207,11 @@ public class DashboardController extends CommonClass implements Initializable {
     void backupHandler() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/shipable/views/service/backup.fxml"));
         Scene scene = new Scene(loader.load());
+        BackupController controller = loader.getController();
+        controller.setActiveUser(activeUser);
         Stage stage = new Stage(StageStyle.UNDECORATED);
         stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
     }
 
@@ -221,7 +225,7 @@ public class DashboardController extends CommonClass implements Initializable {
         stage.initOwner(activeProfile.getScene().getWindow());
         stage.show();
 
-     }
+    }
 
     @FXML
     void updateUserHandler() throws IOException, SQLException {
@@ -244,7 +248,7 @@ public class DashboardController extends CommonClass implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
-     }
+    }
 
     @FXML
     void logOutHandler() {

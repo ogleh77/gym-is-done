@@ -34,8 +34,8 @@ public class DailyReportModel {
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) {
             dailyReport = new DailyReport(
-                    rs.getString(1), rs.getInt(2),
-                    rs.getInt(3), rs.getInt(4), rs.getInt(5));
+                    rs.getString("report_date"), rs.getInt("registration"),
+                    rs.getInt("male"), rs.getInt("female"), rs.getInt("vip_box"));
             reports.add(dailyReport);
         }
         statement.close();

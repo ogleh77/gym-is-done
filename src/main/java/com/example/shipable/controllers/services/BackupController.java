@@ -1,8 +1,8 @@
 package com.example.shipable.controllers.services;
 
 import com.example.shipable.dao.BackupService;
+import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
-import com.example.shipable.helpers.CustomException;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.concurrent.Service;
@@ -12,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -34,7 +33,7 @@ public class BackupController extends CommonClass implements Initializable {
     @FXML
     private TextField name;
     @FXML
-    private Label path;
+    private Label lastBackup;
 
     @FXML
     private JFXButton pathBtn;
@@ -52,9 +51,12 @@ public class BackupController extends CommonClass implements Initializable {
         Platform.runLater(() -> {
             stage = (Stage) listView.getScene().getWindow();
             getMandatoryFields().add(name);
+            enterKeyFire(backupBtn, stage);
+
             try {
                 if (!BackupService.backupPaths().isEmpty()) {
-                    listView.setItems(BackupService.backupPaths());
+                    listView.getItems().add(BackupService.backupPaths().get(0));
+                    lastBackup.setText("Last backup  " + BackupService.backupPaths().get(1));
                 }
             } catch (SQLException e) {
                 errorMessage(e.getMessage());
@@ -76,7 +78,7 @@ public class BackupController extends CommonClass implements Initializable {
                 Optional<ButtonType> result = alert.showAndWait();
 
                 if (result.isPresent() && result.get().getButtonData().isDefaultButton()) {
-                   openLoginWindow();
+                    openLoginWindow();
                 } else {
                     alert.close();
                 }
@@ -135,18 +137,6 @@ public class BackupController extends CommonClass implements Initializable {
             }
     }
 
-    @FXML
-    void deletePathHandler() throws CustomException {
-        if (!listView.getItems().isEmpty()) {
-            String path = listView.getSelectionModel().getSelectedItem();
-            if (path == null) {
-                errorMessage("Fadlan dooro path ka aad rabto inaad masaxdo");
-                return;
-            }
-            deleteConfirm(path);
-        }
-    }
-
     private final Service<Void> backupService = new Service<>() {
         @Override
         protected Task<Void> createTask() {
@@ -159,7 +149,7 @@ public class BackupController extends CommonClass implements Initializable {
                         Platform.runLater(() -> informationAlert("Backup successfully."));
                     } catch (Exception e) {
                         Platform.runLater(() -> infoAlert(e.getMessage()));
-                     }
+                    }
                     return null;
                 }
             };
@@ -192,31 +182,8 @@ public class BackupController extends CommonClass implements Initializable {
         DirectoryChooser chooser = new DirectoryChooser();
         File selectedPath = chooser.showDialog(null);
         BackupService.insertPath(selectedPath.getAbsolutePath() + "/" + name.getText());
-        path.setText("Path: " + selectedPath + "/" + name.getText());
         listView.getItems().add(selectedPath.getAbsolutePath() + "/" + name.getText());
         pathBtn.setDisable(true);
-        deletePath.setDisable(!deletePath.isDisable());
-    }
-
-    private void deleteConfirm(String path) throws CustomException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Ma hubtaa inad masaxdo path kan." +
-                " Ogow coputerka kama baxayo backup ku welina wad kaso upload garayn kartaa",
-                new ButtonType("Haa", ButtonBar.ButtonData.YES),
-                new ButtonType("Maya", ButtonBar.ButtonData.NO));
-
-        Optional<ButtonType> results = alert.showAndWait();
-
-        if (results.isPresent() && results.get().getButtonData().isDefaultButton()) {
-            BackupService.deletePath(path);
-            listView.getItems().remove(path);
-            informationAlert("Deleted successfully");
-            if (listView.getItems().isEmpty()) {
-                deletePath.setDisable(true);
-                pathBtn.setDisable(false);
-            }
-        } else {
-            alert.close();
-        }
     }
 
     private void restorePathConfirm() {
@@ -224,13 +191,21 @@ public class BackupController extends CommonClass implements Initializable {
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extFilter =
                 new FileChooser.ExtensionFilter("TEXT files (*.txt)", "*");
-         fileChooser.getExtensionFilters().add(extFilter);
+        fileChooser.getExtensionFilters().add(extFilter);
 
 
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
             restorePath = selectedFile.getAbsolutePath();
+        }
+    }
+
+    @Override
+    public void setActiveUser(Users activeUser) {
+        super.setActiveUser(activeUser);
+        if (!activeUser.getRole().equals("super_admin")) {
+            restoreBtn.setDisable(true);
         }
     }
 

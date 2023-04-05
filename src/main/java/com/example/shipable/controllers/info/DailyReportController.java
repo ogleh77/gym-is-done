@@ -76,7 +76,7 @@ public class DailyReportController extends CommonClass implements Initializable 
     private DatePicker startDate;
     private ObservableList<DailyReport> reports;
     private final ObservableList<DailyReport> weeklyReport;
-    private final URL url = getClass().getResource("/com/example/gymproject/style/icons/icons8-search-50.png");
+    private final URL url = getClass().getResource("/com/example/shipable/style/icons/icons8-search-50.png");
 
     public DailyReportController() throws SQLException {
         weeklyReport = DailyReportModel.getWeeklyPayments(LocalDate.now());

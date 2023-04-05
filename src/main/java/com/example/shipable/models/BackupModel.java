@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 
 public class BackupModel {
     private static final Connection connection = DbConnection.getConnection();
@@ -20,11 +21,6 @@ public class BackupModel {
         statement.execute("INSERT INTO backup_table(location) VALUES('" + path + "')");
     }
 
-    public void deletePath(String path) throws SQLException {
-        Statement statement = connection.createStatement();
-        statement.execute("DELETE FROM backup_table WHERE location='" + path + "'");
-    }
-
     public ObservableList<String> backupPaths() throws SQLException {
 
         Statement statement = connection.createStatement();
@@ -33,6 +29,7 @@ public class BackupModel {
 
         while (rs.next()) {
             paths.add(rs.getString("location"));
+            paths.add(rs.getString("last_backup"));
         }
         rs.close();
         statement.close();
@@ -41,8 +38,19 @@ public class BackupModel {
 
     public void backUp(String path) throws SQLException {
         Statement statement = connection.createStatement();
-        String query = "BACKUP to " + path;
-        statement.executeUpdate(query);
+        connection.setAutoCommit(false);
+        try {
+            String query = "BACKUP to " + path;
+            String lastBackup = "UPDATE backup_table SET last_backup='" + LocalDateTime.now() +
+                    "' WHERE location='" + path + "'";
+            statement.executeUpdate(query);
+            statement.executeUpdate(lastBackup);
+
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+        }
+
     }
 
     public void restore(String path) throws SQLException {

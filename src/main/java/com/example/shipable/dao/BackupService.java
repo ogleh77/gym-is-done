@@ -24,18 +24,7 @@ public class BackupService {
             throw new CustomException(e.getMessage());
         }
     }
-    public static void deletePath(String path) throws CustomException {
-        try {
-            if (path == null) {
-                throw new CustomException("Fadlan dooro path-ka aad delete garayn rabtid");
-            }
 
-            backupModel.deletePath(path);
-
-        } catch (SQLException e) {
-            throw new CustomException(e.getMessage());
-        }
-    }
     public static void backup(String path) throws CustomException {
         try {
             if (path == null) {

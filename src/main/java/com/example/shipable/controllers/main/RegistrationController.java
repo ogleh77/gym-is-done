@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -63,18 +64,14 @@ public class RegistrationController extends CommonClass implements Initializable
 
     @FXML
     private ComboBox<String> shift;
-
     @FXML
     private TextField weight;
-
     @FXML
     private Label weightValidation;
     private boolean isCustomerNew = true;
     private final int newCustomerID;
-
     private boolean done = false;
     private ObservableList<Customers> customersList;
-
     private final ButtonType payment;
 
     public RegistrationController() throws SQLException {
@@ -115,6 +112,7 @@ public class RegistrationController extends CommonClass implements Initializable
                 }
             }
         });
+
     }
 
     @FXML

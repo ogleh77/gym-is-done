@@ -30,20 +30,17 @@ public class BoxService {
     public static void deleteBox(Box box) throws SQLException {
         try {
             if (!box.isReady()) {
-                throw new CustomException("Khanadan macmiil ayaa isticmalaya hada \n" +
-                        "Saaso tahay ma masaxi kartid");
+                throw new CustomException("Khanadan macmiil ayaa isticmalaya hada \n" + "Saaso tahay ma masaxi kartid");
             }
             boxModel.deleteBox(box);
 
         } catch (SQLException e) {
-           throw  new CustomException(e.getMessage());
+            throw new CustomException(e.getMessage());
         }
     }
 
     public static ObservableList<Box> fetchBoxes() throws SQLException {
-        System.out.println("Called fetch box");
         if (boxes == null) {
-            System.out.println("init boxes");
             boxes = boxModel.fetchBoxes();
         }
 

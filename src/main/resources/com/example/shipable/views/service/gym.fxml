@@ -25,7 +25,7 @@
             <ImageView fitHeight="29.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../../style/icons/whitedumbel.png" />
             </ImageView>
-            <Label styleClass="top-label" text="Shuruucda Gymka" textFill="#f2ecec">
+            <Label styleClass="top-label" text="GYM OPERATIONS" textFill="#f2ecec">
                 <font>
                     <Font name="Arial Bold" size="13.0" />
                 </font>
@@ -59,7 +59,7 @@
     <TextField fx:id="addBox" layoutX="256.0" layoutY="441.0" prefHeight="36.0" prefWidth="220.0" promptText="Magaca khanada " />
     <Separator layoutX="254.0" layoutY="198.0" prefHeight="4.0" prefWidth="211.0" />
     <TextField fx:id="boxCost" layoutX="257.0" layoutY="89.0" prefHeight="29.0" prefWidth="211.0" promptText="e.g $12.0" />
-    <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="452.0" onAction="#updateHandler" prefHeight="42.0" prefWidth="172.0" styleClass="btn-upload-image" stylesheets="@../../style/css/button-style.css" text="Update Gym">
+    <JFXButton fx:id="updateBtn" buttonType="RAISED" layoutX="31.0" layoutY="452.0" onAction="#updateHandler" prefHeight="42.0" prefWidth="172.0" styleClass="btn-upload-image" stylesheets="@../../style/css/button-style.css" text="Update Gym">
         <graphic>
             <ImageView fitHeight="59.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../../style/icons/icons8-available-updates-24.png" />

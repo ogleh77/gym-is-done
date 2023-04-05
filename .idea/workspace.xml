@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bcd583-cef6-42d9-9be8-1faf0769faec" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/DailyReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/DailyReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Payments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Payments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/DailyReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/DailyReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/BackupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/BackupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/BoxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/dao/BoxService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/BackupModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/BackupModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/DailyReportModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/DailyReportModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/gym.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/gym.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,29 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable/controllers/info",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable/controllers/info&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info" />
@@ -137,7 +147,8 @@
       <workItem from="1680602923733" duration="8514000" />
       <workItem from="1680613706417" duration="1634000" />
       <workItem from="1680678831031" duration="151000" />
-      <workItem from="1680688765080" duration="4133000" />
+      <workItem from="1680688765080" duration="4313000" />
+      <workItem from="1680699644714" duration="5856000" />
     </task>
     <servers />
   </component>
