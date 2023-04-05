@@ -10,8 +10,6 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.Arrays;
-
 public class PaymentModel {
     private static final Connection connection = DbConnection.getConnection();
 
@@ -108,7 +106,6 @@ public class PaymentModel {
         ObservableList<Payments> payments = FXCollections.observableArrayList();
         Statement statement = connection.createStatement();
 
-        Payments payment = null;
         ResultSet rs = statement.executeQuery("SELECT * FROM payments LEFT JOIN box b on payments.box_fk = b.box_id " + "WHERE customer_phone_fk=" + customerPhone + "  AND pending=false AND is_online=true ORDER BY exp_date DESC ");
 
         return getPayments(payments, statement, rs);
@@ -118,18 +115,13 @@ public class PaymentModel {
 
         ObservableList<Payments> payments = FXCollections.observableArrayList();
         Statement statement = connection.createStatement();
-
-        ResultSet rs = statement.executeQuery("SELECT * FROM payments LEFT JOIN box b on payments.box_fk = b.box_id " + "WHERE customer_phone_fk=" + customerPhone + "  AND pending=false AND is_online=false ");
-
-
-        return getPayments(payments, statement, rs);
+   ResultSet rs = statement.executeQuery("SELECT * FROM payments LEFT JOIN box b on payments.box_fk = b.box_id " + "WHERE customer_phone_fk=" + customerPhone + "  AND pending=false AND is_online=false ");
+  return getPayments(payments, statement, rs);
 
     }
 
     public ObservableList<Payments> fetchAllCustomersPayments(String phone) throws SQLException {
-        //-------Fetch payments according to customer that belongs--------tested......
-
-        ObservableList<Payments> payments = FXCollections.observableArrayList();
+       ObservableList<Payments> payments = FXCollections.observableArrayList();
         Statement statement = connection.createStatement();
 
         ResultSet rs = statement.executeQuery("SELECT * FROM payments LEFT JOIN box b on payments.box_fk = b.box_id " + "WHERE customer_phone_fk=" + phone + " ORDER BY exp_date DESC ");
@@ -152,23 +144,23 @@ public class PaymentModel {
 
     }
 
-    public static void offPayment(Payments payment) throws SQLException {
-        connection.setAutoCommit(false);
-        try {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE payments SET is_online=false WHERE payment_id=" + payment.getPaymentID();
-            if (payment.getBox() != null) {
-                BoxService.updateBox(payment.getBox());
-            }
-            statement.executeUpdate(query);
-            connection.commit();
-        } catch (SQLException e) {
-            connection.rollback();
-            e.printStackTrace();
-            throw new CustomException("Khalad ayaa dhacay mmarka lama off garayn paymentkan");
-        }
-
-    }
+//    public static void offPayment(Payments payment) throws SQLException {
+//        connection.setAutoCommit(false);
+//        try {
+//            Statement statement = connection.createStatement();
+//            String query = "UPDATE payments SET is_online=false WHERE payment_id=" + payment.getPaymentID();
+//            if (payment.getBox() != null) {
+//                BoxService.updateBox(payment.getBox());
+//            }
+//            statement.executeUpdate(query);
+//            connection.commit();
+//        } catch (SQLException e) {
+//            connection.rollback();
+//            e.printStackTrace();
+//            throw new CustomException("Khalad ayaa dhacay mmarka lama off garayn paymentkan");
+//        }
+//
+//    }
     //__________------------Helpers____________-----------
 
 
@@ -190,11 +182,7 @@ public class PaymentModel {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM pending WHERE payment_fk=" + paymentID);
         if (rs.next()) {
-            int daysRemain = rs.getInt("days_remain");
-            System.out.println("Founded");
-            return daysRemain;
-        } else {
-            System.out.println("Not exist");
+            return rs.getInt("days_remain");
         }
         statement.close();
         rs.close();

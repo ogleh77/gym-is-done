@@ -1,8 +1,6 @@
 package com.example.shipable.controllers.main;
 
 import com.example.shipable.controllers.info.OutDatedController;
-import com.example.shipable.controllers.main.HomeController;
-import com.example.shipable.controllers.main.RegistrationController;
 import com.example.shipable.helpers.CommonClass;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,16 +27,15 @@ public class DashboardMenuController extends CommonClass {
 
     @FXML
     void registrationMenuHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/main/registrations.fxml", borderPane, sidePane, menuHBo, notificationsHBox);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/main/registrations.fxml", borderPane, menuHBo, notificationsHBox);
         RegistrationController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
-        // controller.setCurrentGym(currentGym);
     }
 
     @FXML
     void homeMenuHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/main/home.fxml", borderPane, sidePane, menuHBo, notificationsHBox);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/main/home.fxml", borderPane, menuHBo, notificationsHBox);
         HomeController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
@@ -46,7 +43,7 @@ public class DashboardMenuController extends CommonClass {
 
     @FXML
     void outDatedMenuHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/info/outdated.fxml", borderPane, sidePane, menuHBo, notificationsHBox);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/info/outdated.fxml", borderPane, menuHBo, notificationsHBox);
         OutDatedController controller = loader.getController();
         controller.setActiveUser(activeUser);
     }
@@ -58,7 +55,7 @@ public class DashboardMenuController extends CommonClass {
 
     @FXML
     void reportMenuHandler() throws IOException {
-        openWindow("/com/example/shipable/views/info/dailyReports.fxml", borderPane, sidePane, menuHBo, notificationsHBox);
+        openWindow("/com/example/shipable/views/info/dailyReports.fxml", borderPane, menuHBo, notificationsHBox);
 
     }
 

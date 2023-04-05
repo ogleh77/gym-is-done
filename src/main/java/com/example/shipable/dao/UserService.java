@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import java.sql.SQLException;
 
 public class UserService {
-    private static UserModel userModel;
+    private static final UserModel userModel;
     private static ObservableList<Users> users = null;
 
     static {

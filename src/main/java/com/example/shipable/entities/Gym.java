@@ -7,7 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Gym {
-    private int gymId;
+    private final int gymId;
     private final SimpleStringProperty gymName = new SimpleStringProperty();
     private final SimpleIntegerProperty zaad = new SimpleIntegerProperty();
     private final SimpleIntegerProperty eDahab = new SimpleIntegerProperty();
@@ -36,10 +36,6 @@ public class Gym {
         return gymId;
     }
 
-    public void setGymId(int gymId) {
-        this.gymId = gymId;
-    }
-
     public String getGymName() {
         return gymName.get();
     }
@@ -55,21 +51,12 @@ public class Gym {
     public int getZaad() {
         return zaad.get();
     }
-
-    public SimpleIntegerProperty zaadProperty() {
-        return zaad;
-    }
-
     public void setZaad(int zaad) {
         this.zaad.set(zaad);
     }
 
     public int geteDahab() {
         return eDahab.get();
-    }
-
-    public SimpleIntegerProperty eDahabProperty() {
-        return eDahab;
     }
 
     public void seteDahab(int eDahab) {
@@ -80,20 +67,12 @@ public class Gym {
         return fitnessCost.get();
     }
 
-    public SimpleDoubleProperty fitnessCostProperty() {
-        return fitnessCost;
-    }
-
     public void setFitnessCost(double fitnessCost) {
         this.fitnessCost.set(fitnessCost);
     }
 
     public double getPoxingCost() {
         return poxingCost.get();
-    }
-
-    public SimpleDoubleProperty poxingCostProperty() {
-        return poxingCost;
     }
 
     public void setPoxingCost(double poxingCost) {
@@ -104,20 +83,12 @@ public class Gym {
         return boxCost.get();
     }
 
-    public SimpleDoubleProperty boxCostProperty() {
-        return boxCost;
-    }
-
     public void setBoxCost(double boxCost) {
         this.boxCost.set(boxCost);
     }
 
     public int getPendingDate() {
         return pendingDate.get();
-    }
-
-    public SimpleIntegerProperty pendingDateProperty() {
-        return pendingDate;
     }
 
     public void setPendingDate(int pendingDate) {
@@ -128,10 +99,6 @@ public class Gym {
         return maxDiscount.get();
     }
 
-    public SimpleDoubleProperty maxDiscountProperty() {
-        return maxDiscount;
-    }
-
     public void setMaxDiscount(double maxDiscount) {
         this.maxDiscount.set(maxDiscount);
     }
@@ -140,19 +107,4 @@ public class Gym {
         return vipBoxes;
     }
 
-    @Override
-    public String toString() {
-        return "Gym{" +
-                "gymId=" + gymId +
-                ", gymName='" + gymName + '\'' +
-                ", zaad='" + zaad + '\'' +
-                ", eDahab='" + eDahab + '\'' +
-                ", fitnessCost=" + fitnessCost +
-                ", poxingCost=" + poxingCost +
-                ", boxCost=" + boxCost +
-                ", pendingDate=" + pendingDate +
-                ", maxDiscount=" + maxDiscount +
-                ", vipBoxes=" + vipBoxes +
-                '}';
-    }
 }

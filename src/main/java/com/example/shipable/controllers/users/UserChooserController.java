@@ -32,9 +32,7 @@ public class UserChooserController extends CommonClass implements Initializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Platform.runLater(() -> {
-            thisStage = (Stage) listView.getScene().getWindow();
-        });
+        Platform.runLater(() -> thisStage = (Stage) listView.getScene().getWindow());
     }
 
     @FXML
@@ -105,17 +103,14 @@ public class UserChooserController extends CommonClass implements Initializable 
             UserService.delete(listView.getSelectionModel().getSelectedItem());
             listView.getItems().remove(listView.getSelectionModel().getSelectedItem());
         } else {
-            System.out.println("Cancel");
-            alert.close();
+             alert.close();
         }
     }
 
     private void close() {
         FadeOut fadeOut = new FadeOut(listView.getParent());
         fadeOut.setSpeed(2);
-        fadeOut.setOnFinished(e -> {
-            thisStage.close();
-        });
+        fadeOut.setOnFinished(e -> thisStage.close());
         fadeOut.play();
     }
 

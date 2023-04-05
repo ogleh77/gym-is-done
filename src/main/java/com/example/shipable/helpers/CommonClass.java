@@ -96,16 +96,7 @@ public abstract class CommonClass {
         return isValid;
     }
 
-    protected FXMLLoader openWindow(String url, BorderPane borderPane, VBox sidePane, HBox menu, StackPane notificationsHBox) throws IOException {
-//        if (sidePane != null && !sidePane.isVisible()) {
-//            sidePane.setVisible(true);
-//            slideInLeft.setNode(sidePane);
-//            slideInLeft.play();
-//            // System.out.println("In Opener The ref is " + DashboardController.borderPane);
-//            // DashboardController.borderPane.setLeft(sidePane);
-//            borderPane.setLeft(sidePane);
-//        }
-        //side menu
+    protected FXMLLoader openWindow(String url, BorderPane borderPane, HBox menu, StackPane notificationsHBox) throws IOException {
 
         if (menu != null) {
             menu.setVisible(true);
@@ -123,8 +114,6 @@ public abstract class CommonClass {
         AnchorPane anchorPane = loader.load();
         getSlideInRight().setNode(anchorPane);
         getSlideInRight().play();
-        // DashboardController.borderPane.setCenter(anchorPane);
-        //  System.out.println("In Opener The ref is " + DashboardController.borderPane);
         borderPane.setCenter(anchorPane);
         return loader;
     }
@@ -148,12 +137,11 @@ public abstract class CommonClass {
     }
 
     //Alert and give message
-    public Alert informationAlert(String message) {
+    public void informationAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(message);
         alert.setTitle("Hablyo!");
         alert.showAndWait();
-        return alert;
     }
 
     public Alert infoAlert(String message) {
@@ -282,7 +270,7 @@ public abstract class CommonClass {
     }
 
 
-    public byte[] readFile(String file) {
+    public byte[] readFile(String file)  {
 
         ByteArrayOutputStream bos = null;
         try {
@@ -302,9 +290,7 @@ public abstract class CommonClass {
 
     public void closeStage(Stage stage, Node node) {
         FadeOut fadeOut = new FadeOut(node);
-        fadeOut.setOnFinished(e -> {
-            stage.close();
-        });
+        fadeOut.setOnFinished(e -> stage.close());
         fadeOut.setSpeed(2);
         fadeOut.play();
     }

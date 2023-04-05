@@ -17,19 +17,9 @@ public class Box {
     public int getBoxId() {
         return boxId;
     }
-
-    public void setBoxId(int boxId) {
-        this.boxId = boxId;
-    }
-
     public String getBoxName() {
         return boxName.get();
     }
-
-    public SimpleStringProperty boxNameProperty() {
-        return boxName;
-    }
-
     public void setBoxName(String boxName) {
         this.boxName.set(boxName);
     }
@@ -37,11 +27,6 @@ public class Box {
     public boolean isReady() {
         return ready.get();
     }
-
-    public SimpleBooleanProperty readyProperty() {
-        return ready;
-    }
-
     public void setReady(boolean ready) {
         this.ready.set(ready);
     }

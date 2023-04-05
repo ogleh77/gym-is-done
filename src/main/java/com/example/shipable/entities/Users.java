@@ -35,9 +35,7 @@ public class Users {
         return firstName.get();
     }
 
-    public SimpleStringProperty firstNameProperty() {
-        return firstName;
-    }
+
 
     public void setFirstName(String firstName) {
         this.firstName.set(firstName);
@@ -47,9 +45,7 @@ public class Users {
         return lastName.get();
     }
 
-    public SimpleStringProperty lastNameProperty() {
-        return lastName;
-    }
+
 
     public void setLastName(String lastName) {
         this.lastName.set(lastName);
@@ -59,9 +55,7 @@ public class Users {
         return phone.get();
     }
 
-    public SimpleStringProperty phoneProperty() {
-        return phone;
-    }
+
 
     public void setPhone(String phone) {
         this.phone.set(phone);
@@ -71,9 +65,7 @@ public class Users {
         return gender.get();
     }
 
-    public SimpleStringProperty genderProperty() {
-        return gender;
-    }
+
 
     public void setGender(String gender) {
         this.gender.set(gender);
@@ -83,9 +75,7 @@ public class Users {
         return shift.get();
     }
 
-    public SimpleStringProperty shiftProperty() {
-        return shift;
-    }
+
 
     public void setShift(String shift) {
         this.shift.set(shift);
@@ -107,9 +97,7 @@ public class Users {
         return password.get();
     }
 
-    public SimpleStringProperty passwordProperty() {
-        return password;
-    }
+
 
     public void setPassword(String password) {
         this.password.set(password);
@@ -119,9 +107,6 @@ public class Users {
         return role.get();
     }
 
-    public SimpleStringProperty roleProperty() {
-        return role;
-    }
 
     public void setRole(String role) {
         this.role.set(role);

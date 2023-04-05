@@ -20,7 +20,6 @@ public class BoxModel {
 
         Statement statement = connection.createStatement();
         statement.executeUpdate(insertBox);
-        System.out.println("Box saved....");
         statement.close();
     }
 
@@ -31,8 +30,6 @@ public class BoxModel {
         }
         Statement statement = connection.createStatement();
         statement.executeUpdate(boxQuery);
-
-        System.out.println("Box set of " + box);
     }
 
     public ObservableList<Box> fetchBoxes() throws SQLException {
@@ -52,10 +49,8 @@ public class BoxModel {
     }
 
     public void deleteBox(Box box) throws SQLException {
-        System.out.println("Box id " + box.getBoxId());
         Statement statement = connection.createStatement();
         statement.executeUpdate("DELETE FROM box WHERE box_id=" + box.getBoxId());
-        System.out.println(box.getBoxName() + " is deleted..");
     }
 
     public int predictNextId() throws SQLException {

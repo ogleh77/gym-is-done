@@ -62,20 +62,12 @@ public class Customers implements Comparable<Customers> {
         return lastName.get();
     }
 
-    public SimpleStringProperty lastNameProperty() {
-        return lastName;
-    }
-
     public void setLastName(String lastName) {
         this.lastName.set(lastName);
     }
 
     public String getMiddleName() {
         return middleName.get();
-    }
-
-    public SimpleStringProperty middleNameProperty() {
-        return middleName;
     }
 
     public void setMiddleName(String middleName) {
@@ -86,10 +78,6 @@ public class Customers implements Comparable<Customers> {
         return phone.get();
     }
 
-    public SimpleStringProperty phoneProperty() {
-        return phone;
-    }
-
     public void setPhone(String phone) {
         this.phone.set(phone);
     }
@@ -97,11 +85,6 @@ public class Customers implements Comparable<Customers> {
     public String getGander() {
         return gander.get();
     }
-
-    public SimpleStringProperty ganderProperty() {
-        return gander;
-    }
-
     public void setGander(String gander) {
         this.gander.set(gander);
     }
@@ -109,11 +92,6 @@ public class Customers implements Comparable<Customers> {
     public String getShift() {
         return shift.get();
     }
-
-    public SimpleStringProperty shiftProperty() {
-        return shift;
-    }
-
     public void setShift(String shift) {
         this.shift.set(shift);
     }
@@ -121,11 +99,6 @@ public class Customers implements Comparable<Customers> {
     public String getAddress() {
         return address.get();
     }
-
-    public SimpleStringProperty addressProperty() {
-        return address;
-    }
-
     public void setAddress(String address) {
         this.address.set(address);
     }
@@ -141,11 +114,6 @@ public class Customers implements Comparable<Customers> {
     public double getWeight() {
         return weight.get();
     }
-
-    public SimpleDoubleProperty weightProperty() {
-        return weight;
-    }
-
     public void setWeight(double weight) {
         this.weight.set(weight);
     }
@@ -153,11 +121,6 @@ public class Customers implements Comparable<Customers> {
     public String getWhoAdded() {
         return whoAdded.get();
     }
-
-    public SimpleStringProperty whoAddedProperty() {
-        return whoAdded;
-    }
-
     public void setWhoAdded(String whoAdded) {
         this.whoAdded.set(whoAdded);
     }
@@ -169,25 +132,10 @@ public class Customers implements Comparable<Customers> {
     public void setPayments(ObservableList<Payments> payments) {
         this.payments = payments;
     }
-
-    @Override
-    public String toString() {
-        return "\n [customerId: " + customerId + " firstname: " + firstName + "  lastname: " + lastName + " gander " + gander + " phone: " + phone + "weight: " + weight + "\n payments: " + payments + "]\n\n";
-    }
-
     @Override
     public int compareTo(Customers o) {
         if (this.payments.get(0).getExpDate().isAfter(o.payments.get(0).getExpDate())) return 1;
         return 0;
     }
 
-//    @Override
-//    public int compareTo(Customers o) {
-//        if (this.getPayments() != null && this.getPayments().isEmpty()) {
-//            if (this.getPayments().get(0).getExpDate().isBefore(o.payments.get(0).getExpDate()))
-//                return 1;
-//        }
-//
-//        return 0;
-//    }
 }

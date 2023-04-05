@@ -12,7 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
+
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -28,16 +28,11 @@ import java.util.ResourceBundle;
 public class BackupController extends CommonClass implements Initializable {
     @FXML
     private JFXButton backupBtn;
-
-    @FXML
-    private AnchorPane backupPane;
-
     @FXML
     private ListView<String> listView;
 
     @FXML
     private TextField name;
-
     @FXML
     private Label path;
 
@@ -68,8 +63,7 @@ public class BackupController extends CommonClass implements Initializable {
 
         backupService.setOnSucceeded(e -> {
             backupBtn.setGraphic(getFirstImage("/com/example/shipable/style/icons/backup.png"));
-            backupBtn.setText("Back");
-            System.out.println("Done");
+            backupBtn.setText("Backup");
         });
 
         restoreService.setOnSucceeded(e -> {
@@ -82,7 +76,7 @@ public class BackupController extends CommonClass implements Initializable {
                 Optional<ButtonType> result = alert.showAndWait();
 
                 if (result.isPresent() && result.get().getButtonData().isDefaultButton()) {
-                    System.out.println("Restart");
+                   openLoginWindow();
                 } else {
                     alert.close();
                 }
@@ -162,14 +156,10 @@ public class BackupController extends CommonClass implements Initializable {
                     try {
                         Thread.sleep(1000);
                         BackupService.backup(listView.getSelectionModel().getSelectedItem());
-
                         Platform.runLater(() -> informationAlert("Backup successfully."));
-                    } catch (SQLException e) {
+                    } catch (Exception e) {
                         Platform.runLater(() -> infoAlert(e.getMessage()));
-                        /// e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+                     }
                     return null;
                 }
             };
@@ -185,7 +175,6 @@ public class BackupController extends CommonClass implements Initializable {
                     try {
                         Thread.sleep(1000);
                         BackupService.restore(restorePath);
-//                        Platform.runLater(() -> informationAlert("Restored successfully."));
                         restored = true;
                     } catch (SQLException e) {
                         Platform.runLater(() -> infoAlert(e.getMessage()));
@@ -235,7 +224,7 @@ public class BackupController extends CommonClass implements Initializable {
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extFilter =
                 new FileChooser.ExtensionFilter("TEXT files (*.txt)", "*");
-        //fileChooser.getExtensionFilters().add(extFilter);
+         fileChooser.getExtensionFilters().add(extFilter);
 
 
         File selectedFile = fileChooser.showOpenDialog(null);
@@ -246,8 +235,7 @@ public class BackupController extends CommonClass implements Initializable {
     }
 
     private void openLoginWindow() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/gymproject/views/service/login.fxml"));
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/shipable/views/service/backup.fxml"));
         Stage stage = new Stage(StageStyle.UNDECORATED);
         try {
             Scene scene = new Scene(loader.load());
@@ -255,8 +243,6 @@ public class BackupController extends CommonClass implements Initializable {
             stage.show();
         } catch (IOException ex) {
             errorMessage(ex.getMessage());
-
-
         }
     }
 

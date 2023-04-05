@@ -175,7 +175,7 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void homeHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/main/home.fxml", borderPane, sidePane, null, warningStack);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/main/home.fxml", borderPane, null, warningStack);
         HomeController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
@@ -183,16 +183,15 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void registrationHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/main/registrations.fxml", borderPane, sidePane, null, warningStack);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/main/registrations.fxml", borderPane, null, warningStack);
         RegistrationController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
-        //controller.setCurrentGym(currentGym);
-    }
+     }
 
     @FXML
     void outdatedHandler() throws IOException {
-        FXMLLoader loader = openWindow("/com/example/shipable/views/info/outdated.fxml", borderPane, sidePane, null, warningStack);
+        FXMLLoader loader = openWindow("/com/example/shipable/views/info/outdated.fxml", borderPane, null, warningStack);
         OutDatedController controller = loader.getController();
         controller.setActiveUser(activeUser);
     }
@@ -200,7 +199,7 @@ public class DashboardController extends CommonClass implements Initializable {
 
     @FXML
     void reportHandler() throws IOException {
-        openWindow("/com/example/shipable/views/info/dailyReports.fxml", borderPane, sidePane, null, warningStack);
+        openWindow("/com/example/shipable/views/info/dailyReports.fxml", borderPane, null, warningStack);
     }
 
     @FXML
@@ -222,8 +221,7 @@ public class DashboardController extends CommonClass implements Initializable {
         stage.initOwner(activeProfile.getScene().getWindow());
         stage.show();
 
-        // TODO: 07/04/2023 Ste stage darag and drop insha Allah
-    }
+     }
 
     @FXML
     void updateUserHandler() throws IOException, SQLException {
@@ -246,8 +244,7 @@ public class DashboardController extends CommonClass implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
-        // TODO: 07/04/2023 Make drag and drop stage insha Allah
-    }
+     }
 
     @FXML
     void logOutHandler() {

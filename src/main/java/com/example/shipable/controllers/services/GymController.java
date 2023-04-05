@@ -74,17 +74,6 @@ public class GymController extends CommonClass implements Initializable {
         zaadValidation();
         eDahabValidation();
 
-
-//        if (done) {
-//            Alert alert = infoAlert("Updated successfully");
-//
-//            Optional<ButtonType> result = alert.showAndWait();
-//            if (result.isPresent() && result.get().getButtonData().isDefaultButton()) {
-//                System.out.println("Ok");
-//            } else {
-//                System.out.println("Cancel");
-//            }
-//        }
     }
 
     @FXML
@@ -185,10 +174,7 @@ public class GymController extends CommonClass implements Initializable {
         poxingCost.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("(\\d*)")) {
                 poxingCost.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
-                System.out.println("Valid");
-            } else {
-                System.out.println("Invalid");
-            }
+             }
         });
     }
 
@@ -196,16 +182,12 @@ public class GymController extends CommonClass implements Initializable {
         boxCost.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("(\\d*)")) {
                 boxCost.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
-                System.out.println("Valid");
-            } else {
-                System.out.println("Invalid");
-            }
+             }
         });
     }
 
     private void pendValidation() {
-        System.out.println("Validating pend");
-        pendDate.textProperty().addListener((observable, oldValue, newValue) -> {
+         pendDate.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 pendDate.setText(newValue.replaceAll("[^\\d]", ""));
             }
@@ -213,9 +195,7 @@ public class GymController extends CommonClass implements Initializable {
     }
 
     private void discountValidation() {
-        System.out.println("Validating max");
-
-        maxDiscount.textProperty().addListener((observable, oldValue, newValue) -> {
+       maxDiscount.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 maxDiscount.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
             }
@@ -223,8 +203,6 @@ public class GymController extends CommonClass implements Initializable {
     }
 
     private void fitnessValidation() {
-        System.out.println("Validating fitness");
-
         fitnessCost.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 fitnessCost.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
@@ -233,8 +211,7 @@ public class GymController extends CommonClass implements Initializable {
     }
 
     private void zaadValidation() {
-        System.out.println("Validating pend");
-        zaad.textProperty().addListener((observable, oldValue, newValue) -> {
+         zaad.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 zaad.setText(newValue.replaceAll("[^\\d]", ""));
             }
@@ -242,8 +219,7 @@ public class GymController extends CommonClass implements Initializable {
     }
 
     private void eDahabValidation() {
-        System.out.println("Validating pend");
-        eDahab.textProperty().addListener((observable, oldValue, newValue) -> {
+         eDahab.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 eDahab.setText(newValue.replaceAll("[^\\d]", ""));
             }

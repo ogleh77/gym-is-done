@@ -14,8 +14,7 @@ public class UserModel {
         String insertUserQuery = "INSERT INTO users(first_name, last_name, phone, gender, shift, username, password, image, role) " +
                 "VALUES (?,?,?,?,?,?,?,?,?)";
         insertOrUpdateUser(users, insertUserQuery);
-        System.out.println("User inserted..");
-    }
+     }
 
     public void update(Users users) throws SQLException {
         String updateUser = "UPDATE users SET first_name=?,last_name=?,phone=?,gender=?,shift=?,username=?,password=?,image=?,role=? \n" +
@@ -28,7 +27,7 @@ public class UserModel {
                 "WHERE username='" + users.getUsername() + "'";
         Statement statement = connection.createStatement();
         statement.execute(deleteUser);
-        System.out.println("Deleted..");
+
     }
 
     public ObservableList<Users> fetch() throws SQLException {

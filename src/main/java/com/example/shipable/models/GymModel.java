@@ -25,8 +25,7 @@ public class GymModel {
 
         ps.executeUpdate();
         ps.close();
-        System.out.println("Updated");
-    }
+     }
 
     public Gym currentGym() throws SQLException {
         Statement statement = connection.createStatement();

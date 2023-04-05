@@ -41,16 +41,16 @@
                 <HBox.margin>
                     <Insets left="50.0" />
                 </HBox.margin>
-            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="301.0" spacing="10.0">
-               <children>
-                      <Circle fx:id="activeProfile" fill="DODGERBLUE" radius="19.0" stroke="#048be4" strokeLineCap="ROUND" strokeWidth="0.0" />
-                      <Label fx:id="activeUserName" onMouseClicked="#profileHandler" styleClass="profile-hover" text="Mohamed Ogleh" textFill="#fffbfb">
-                          <font>
-                              <Font name="Verdana" size="17.0" />
-                          </font>
-                      </Label>
-               </children>
-            </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="301.0" spacing="10.0">
+                    <Circle fx:id="activeProfile" fill="DODGERBLUE" radius="19.0" stroke="#048be4" strokeLineCap="ROUND"
+                            strokeWidth="0.0"/>
+                    <Label fx:id="activeUserName" onMouseClicked="#profileHandler" styleClass="profile-hover"
+                           text="Mohamed Ogleh" textFill="#fffbfb">
+                        <font>
+                            <Font name="Verdana" size="17.0"/>
+                        </font>
+                    </Label>
+                </HBox>
                 <StackPane fx:id="warningStack" onMouseClicked="#warningHandler" prefHeight="41.0" prefWidth="55.0" styleClass="top-menu-hover">
                     <HBox.margin>
                         <Insets bottom="2.0" left="15.0" top="2.0" />

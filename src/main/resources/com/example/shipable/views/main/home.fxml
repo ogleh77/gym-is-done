@@ -133,26 +133,22 @@
                 </font>
             </Label>
             <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@../../style/icons/icons8-info-squared-50%20(1).png" />
+                <Image url="@../../style/icons/info-black.png" />
             </ImageView>
-         <HBox alignment="CENTER" prefHeight="20.0" prefWidth="294.0">
-            <children>
-               <Label text="evocher :-458443" textFill="#888c8d">
-                  <font>
-                     <Font name="Arial Black" size="14.0" />
-                  </font>
-               </Label>
-            </children>
-         </HBox>
-         <HBox alignment="CENTER" prefHeight="20.0" prefWidth="294.0">
-            <children>
-               <Label text="edahab:- 493393" textFill="#888c8d">
-                  <font>
-                     <Font name="Arial Black" size="14.0" />
-                  </font>
-               </Label>
-            </children>
-         </HBox>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="294.0">
+                <Label text="evocher :-458443" textFill="#888c8d">
+                    <font>
+                        <Font name="Arial Black" size="14.0"/>
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="294.0">
+                <Label text="edahab:- 493393" textFill="#888c8d">
+                    <font>
+                        <Font name="Arial Black" size="14.0" />
+                    </font>
+                </Label>
+            </HBox>
         </VBox>
     </HBox>
     <HBox alignment="CENTER" layoutX="27.0" layoutY="434.0" prefHeight="42.0" prefWidth="1120.0" spacing="10.0">
@@ -181,7 +177,7 @@
             <JFXButton onAction="#fullInfoHandler" prefHeight="40.0" prefWidth="107.0" style="-fx-background-color: dodgerblue;" text="Info" textFill="#e4dfdf">
                 <graphic>
                     <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../../style/icons/icons8-info-squared-50.png" />
+                        <Image url="@../../style/icons/info-black.png" />
                     </ImageView>
                 </graphic>
                 <font>

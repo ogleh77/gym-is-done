@@ -122,7 +122,6 @@ public class PaymentController extends CommonClass implements Initializable {
                 borderPane.getLeft().setDisable(false);
                 if (result.isPresent() && result.get() == ok) {
                     try {
-
                         backGoToHome();
                     } catch (IOException ex) {
                         errorMessage(ex.getMessage());
@@ -136,7 +135,6 @@ public class PaymentController extends CommonClass implements Initializable {
 
     @FXML
     void createPaymentHandler() {
-
         if (isValid(getMandatoryFields(), null)) {
             if (start) {
                 service.restart();
@@ -172,7 +170,6 @@ public class PaymentController extends CommonClass implements Initializable {
                 imgView.setImage(image);
             }
             try {
-                System.out.println(PaymentService.fetchAllCustomersPayments(customer.getPhone()));
                 paymentsList = PaymentService.fetchAllCustomersPayments(customer.getPhone());
             } catch (SQLException e) {
                 errorMessage(e.getMessage());
@@ -254,7 +251,6 @@ public class PaymentController extends CommonClass implements Initializable {
 
     private void paymentValidation() {
         boxChooser.valueProperty().addListener((observable, oldValue, newValue) -> {
-            //Stop the user to name a box into remove or something insha Allah
             if ((oldValue == null || oldValue.getBoxName().matches("re.*")) && !newValue.getBoxName().matches("re.*")) {
                 currentCost += vipBoxCost;
             } else if (oldValue != null && boxChooser.getValue().getBoxName().matches("re.*")) {
@@ -300,7 +296,6 @@ public class PaymentController extends CommonClass implements Initializable {
                         customer.getPayments().add(0, payment);
                         PaymentService.insertPayment(customer);
                         Thread.sleep(1000);
-                        System.out.println(payment);
                         done = true;
                     } catch (Exception e) {
                         Platform.runLater(() -> errorMessage(e.getMessage()));

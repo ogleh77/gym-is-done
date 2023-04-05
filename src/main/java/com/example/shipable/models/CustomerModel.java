@@ -33,41 +33,36 @@ public class CustomerModel {
             Statement statement = connection.createStatement();
 
             statement.addBatch(deleteCustomerQuery);
-            if (customer.getPayments() != null)
-                statement.addBatch(deletePaymentsQuery);
+            if (customer.getPayments() != null) statement.addBatch(deletePaymentsQuery);
 
             statement.executeBatch();
             connection.commit();
         } catch (SQLException e) {
             connection.rollback();
         }
-        System.out.println("Customer and it's payments were deleted");
     }
 
-    public ObservableList<Customers> fetchOfflineCustomers(Users activeUser) throws SQLException {
-        System.out.println("Called offline customers");
-        ObservableList<Customers> customers = FXCollections.observableArrayList();
-
-        String fetchCustomers = fetchByRoleAndGander(activeUser.getGender(), activeUser.getRole());
-
-        Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery(fetchCustomers);
-
-        while (rs.next()) {
-            String customerPhone = rs.getString("phone");
-            ObservableList<Payments> payments = PaymentService.fetchCustomersOfflinePayment(customerPhone);
-            if (payments == null || payments.isEmpty()) {
-                continue;
-            }
-            getCustomers(customers, rs, payments);
-        }
-        rs.close();
-        statement.close();
-        return customers;
-    }
+//    public ObservableList<Customers> fetchOfflineCustomers(Users activeUser) throws SQLException {
+//        ObservableList<Customers> customers = FXCollections.observableArrayList();
+//        String fetchCustomers = fetchByRoleAndGander(activeUser.getGender(), activeUser.getRole());
+//
+//        Statement statement = connection.createStatement();
+//        ResultSet rs = statement.executeQuery(fetchCustomers);
+//
+//        while (rs.next()) {
+//            String customerPhone = rs.getString("phone");
+//            ObservableList<Payments> payments = PaymentService.fetchCustomersOfflinePayment(customerPhone);
+//            if (payments == null || payments.isEmpty()) {
+//                continue;
+//            }
+//            getCustomers(customers, rs, payments);
+//        }
+//        rs.close();
+//        statement.close();
+//        return customers;
+//    }
 
     public ObservableList<Customers> fetchOnlineCustomers(Users activeUser) throws SQLException {
-        System.out.println("Called offline customers");
         ObservableList<Customers> customers = FXCollections.observableArrayList();
 
         String fetchCustomers = fetchByRoleAndGander(activeUser.getGender(), activeUser.getRole());
@@ -89,12 +84,8 @@ public class CustomerModel {
     }
 
     public ObservableList<Customers> fetchAllCustomers(Users activeUser) throws SQLException {
-        System.out.println("Called customers");
-
         ObservableList<Customers> customers = FXCollections.observableArrayList();
-
         String fetchCustomers = fetchByRoleAndGander(activeUser.getGender(), activeUser.getRole());
-
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(fetchCustomers);
 
@@ -146,8 +137,7 @@ public class CustomerModel {
 
     //---------------––Helpers---------------------
     private void getCustomers(ObservableList<Customers> customers, ResultSet rs, ObservableList<Payments> payment) throws SQLException {
-        Customers customer = new Customers(rs.getInt("customer_id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("middle_name"), rs.getString("phone"), rs.getString("gander"), rs.getString("shift"), rs.getString("address"), rs.getBytes("image"),
-                rs.getDouble("weight"), rs.getString("who_added"));
+        Customers customer = new Customers(rs.getInt("customer_id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("middle_name"), rs.getString("phone"), rs.getString("gander"), rs.getString("shift"), rs.getString("address"), rs.getBytes("image"), rs.getDouble("weight"), rs.getString("who_added"));
 
         if (payment != null) {
             customer.setPayments(payment);
@@ -168,25 +158,16 @@ public class CustomerModel {
         ps.setDouble(9, customer.getWeight());
         if (insert) {
             ps.setString(10, customer.getWhoAdded());
-            System.out.println("Customer added");
-        } else {
-            System.out.println("Customer Updated..");
         }
         ps.executeUpdate();
         ps.close();
     }
 
     private String fetchByRoleAndGander(String gander, String role) {
-
         String fetchQuery = "SELECT * FROM customers WHERE gander='" + gander + "' ORDER BY customer_id ";
-
         if (role.equals("super_admin")) {
-            System.out.println("Active customer is " + role);
             fetchQuery = "SELECT * FROM customers ORDER BY customer_id ";
         }
-        System.out.println(fetchQuery);
         return fetchQuery;
     }
-
-
 }

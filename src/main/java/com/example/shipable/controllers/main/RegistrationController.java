@@ -5,7 +5,6 @@ import com.example.shipable.dao.CustomerService;
 import com.example.shipable.entities.Customers;
 import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
-import com.example.shipable.helpers.CustomException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.application.Platform;
@@ -78,10 +77,9 @@ public class RegistrationController extends CommonClass implements Initializable
 
     private final ButtonType payment;
 
-    public RegistrationController() throws CustomException {
+    public RegistrationController() throws SQLException {
         newCustomerID = CustomerService.predictNextId();
         this.payment = new ButtonType("Go to payment", ButtonBar.ButtonData.OK_DONE);
-
     }
 
     @Override
@@ -108,7 +106,6 @@ public class RegistrationController extends CommonClass implements Initializable
 
                 if (result.isPresent() && result.get().getButtonData().isDefaultButton()) {
                     try {
-                        // TODO: 03/04/2023 "Something is wrong backing to home..
                         backGoToHome();
                     } catch (IOException ex) {
                         errorMessage(ex.getMessage());
@@ -216,10 +213,8 @@ public class RegistrationController extends CommonClass implements Initializable
                         CustomerService.insertOrUpdateCustomer(savingCustomer(), isCustomerNew);
                         if (isCustomerNew) {
                             customersList.add(0, savingCustomer());
-                            done = true;
-                        } else {
-                            done = true;
                         }
+                        done = true;
                         Thread.sleep(1000);
 
                     } catch (Exception e) {
@@ -237,7 +232,6 @@ public class RegistrationController extends CommonClass implements Initializable
         String gander = male.isSelected() ? "Male" : "Female";
         String _address = address.getText() != null ? address.getText().trim() : "No address";
         double _weight = ((!weight.getText().isEmpty() || !weight.getText().isBlank())) ? Double.parseDouble(weight.getText().trim()) : 65.0;
-        String image = selectedFile != null ? selectedFile.getAbsolutePath() : null;
         int customerId = super.customer == null ? 0 : customer.getCustomerId();
         String _shift = shift.getValue() != null ? shift.getValue() : "Morning";
 
@@ -288,12 +282,10 @@ public class RegistrationController extends CommonClass implements Initializable
                 weightValidation.setVisible(false);
             }
         });
-
     }
 
     private void paymentMethod() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Waxaad diwaan gelisay macmiil cusub " + "Fadlan u gudub qaybta lacag bixinta macniilka", payment);
-
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == payment) {
             try {
@@ -321,9 +313,6 @@ public class RegistrationController extends CommonClass implements Initializable
         ObservableList<Control> controls = FXCollections.observableArrayList(getMandatoryFields());
         controls.add(weight);
         controls.add(address);
-        System.out.println(controls);
-        System.out.println();
-        System.out.println(getMandatoryFields());
         for (Control control : controls) {
             if (control instanceof TextField) {
                 ((TextField) control).clear();

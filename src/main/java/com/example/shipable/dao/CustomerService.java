@@ -72,17 +72,15 @@ public class CustomerService {
 
     }
 
-    public static ObservableList<Customers> fetchOfflineCustomer(Users activeUser) throws SQLException {
-        if (offlineCustomers == null) {
-            offlineCustomers = customerModel.fetchOfflineCustomers(activeUser);
-        }
-        Collections.sort(offlineCustomers);
-        return offlineCustomers;
-    }
+// public static ObservableList<Customers> fetchOfflineCustomer(Users activeUser) throws SQLException {
+//        if (offlineCustomers == null) {
+//            offlineCustomers = customerModel.fetchOfflineCustomers(activeUser);
+//        }
+//        Collections.sort(offlineCustomers);
+//        return offlineCustomers;
+//    }
 
     public static ObservableList<Customers> fetchOnlineCustomer(Users activeUser) throws SQLException {
-        System.out.println("Online customers Called");
-
         onlineCustomers = customerModel.fetchOnlineCustomers(activeUser);
         Collections.sort(onlineCustomers);
 
@@ -90,10 +88,7 @@ public class CustomerService {
     }
 
     public static ObservableList<Customers> fetchAllCustomer(Users activeUser) throws SQLException {
-
         allCustomersList = customerModel.fetchAllCustomers(activeUser);
-
-        System.out.println("Some one called me and I returned " + allCustomersList.hashCode());
         return allCustomersList;
     }
 
@@ -102,9 +97,6 @@ public class CustomerService {
         String to = toDate.toString();
         ObservableList<Customers> offlineCustomers = customerModel.fetchQualifiedOfflineCustomers(customerQuery, from, to);
         Collections.sort(offlineCustomers);
-        // TODO: 26/03/2023 sort insha Allah
-        System.out.println("I Service \n");
-        System.out.println(offlineCustomers);
         return offlineCustomers;
     }
 

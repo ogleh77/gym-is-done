@@ -12,19 +12,17 @@ import java.sql.Statement;
 
 public class BackupModel {
     private static final Connection connection = DbConnection.getConnection();
-    private static ObservableList<String> paths = FXCollections.observableArrayList();
+    private static final ObservableList<String> paths = FXCollections.observableArrayList();
 
 
     public void insertPath(String path) throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute("INSERT INTO backup_table(location) VALUES('" + path + "')");
-        System.out.println("Path saved");
     }
 
     public void deletePath(String path) throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute("DELETE FROM backup_table WHERE location='" + path + "'");
-        System.out.println("path deleted..");
     }
 
     public ObservableList<String> backupPaths() throws SQLException {
@@ -42,19 +40,14 @@ public class BackupModel {
     }
 
     public void backUp(String path) throws SQLException {
-
         Statement statement = connection.createStatement();
         String query = "BACKUP to " + path;
-        System.out.println(query);
         statement.executeUpdate(query);
-        System.out.println("Backup-ed");
     }
 
     public void restore(String path) throws SQLException {
         String query = "RESTORE FROM " + path;
         Statement statement = connection.createStatement();
         statement.executeUpdate(query);
-        System.out.println("Restored-ed");
-
     }
 }

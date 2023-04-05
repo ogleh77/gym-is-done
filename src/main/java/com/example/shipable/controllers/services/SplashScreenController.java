@@ -78,9 +78,6 @@ public class SplashScreenController extends CommonClass implements Initializable
                     if (now.plusDays(2).isEqual(expDate) || now.plusDays(1).isEqual(expDate) || now.isEqual(expDate)) {
                         warningList.add(customer);
                     } else {
-                        // TODO: 05/04/2023 Make the payment of
-                        System.out.println(customer.getFirstName() + " " + expDate + " Outdated");
-
                         ///PaymentModel.offPayment(payment);
                     }
 
