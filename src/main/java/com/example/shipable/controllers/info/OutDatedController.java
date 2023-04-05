@@ -83,10 +83,7 @@ public class OutDatedController extends CommonClass implements Initializable {
                 searchHandler.setGraphic(getLoadingImageView());
                 start = true;
             }
-        } else {
-            System.out.println("Invalid....");
         }
-        System.out.println(customerQuery());
     }
 
     private VBox vBox(int index) {
@@ -129,8 +126,7 @@ public class OutDatedController extends CommonClass implements Initializable {
                 CardController controller = loader.getController();
                 controller.setCustomer(outDatedCustomers.get(i));
                 gridView.add(anchorPane, column++, row);
-                // TODO: 24/03/2023 Date validate
-            }
+             }
 
         } catch (Exception e) {
             e.printStackTrace();

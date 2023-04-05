@@ -3,8 +3,10 @@ package com.example.shipable.controllers.main;
 
 import com.example.shipable.controllers.info.CustomerInfoController;
 import com.example.shipable.dao.CustomerService;
+import com.example.shipable.dao.GymService;
 import com.example.shipable.dao.UserService;
 import com.example.shipable.entities.Customers;
+import com.example.shipable.entities.Gym;
 import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
 import javafx.application.Platform;
@@ -58,14 +60,19 @@ public class HomeController extends CommonClass implements Initializable {
     private Label usersCount;
     @FXML
     private Label customersCount;
-
+    @FXML
+    private Label zaad;
+    @FXML
+    private Label edahab;
     private final int nextUserId;
     private final int nextCustomerId;
 
+    private Gym currentGym;
 
     public HomeController() throws SQLException {
         nextUserId = (UserService.predictNextId() - 1);
         nextCustomerId = (CustomerService.predictNextId() - 1);
+        this.currentGym = GymService.getGym();
     }
 
     @Override
@@ -75,6 +82,9 @@ public class HomeController extends CommonClass implements Initializable {
             searchFilter();
             usersCount.setText(nextUserId == 1 ? nextUserId + " user" : nextUserId + " users");
             customersCount.setText(nextCustomerId == 1 ? nextCustomerId + " member" : nextCustomerId + " members");
+            edahab.setText("eDahab: " + currentGym.geteDahab());
+            zaad.setText("Zaad: " + currentGym.getZaad());
+
         });
     }
 
@@ -179,7 +189,7 @@ public class HomeController extends CommonClass implements Initializable {
 
 
     private void deleteConfirm(Customers customer) throws SQLException {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Ma hubtaa inaad ka baxdo user ka " + activeUser.getUsername(), no, ok);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Ma hubtaa inaad masaxdo macmiilka " + customer.getFirstName() + " " + customer.getMiddleName() + " " + customer.getLastName(), no, ok);
 
         Optional<ButtonType> result = alert.showAndWait();
 

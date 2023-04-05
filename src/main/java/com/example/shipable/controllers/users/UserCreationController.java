@@ -67,6 +67,7 @@ public class UserCreationController extends CommonClass implements Initializable
         Platform.runLater(() -> {
             initFields();
             stage = (Stage) superAdmin.getScene().getWindow();
+            enterKeyFire(createBtn, stage);
         });
         phoneValidation();
 
