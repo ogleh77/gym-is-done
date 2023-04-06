@@ -82,8 +82,6 @@ public class SplashScreenController extends CommonClass implements Initializable
 
                     } else if (now.isAfter(payment.getExpDate())) {
                         PaymentModel.offPayment(payment);
-                    } else {
-                        System.out.println(customer.getFirstName() + " active");
                     }
                 }
                 Thread.sleep(sleepTime);

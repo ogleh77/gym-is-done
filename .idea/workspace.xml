@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bcd583-cef6-42d9-9be8-1faf0769faec" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/database.db-journal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/BackupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/backup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/CustomerInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/CustomerInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/SplashScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info/customer-info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info/customer-info.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,36 +43,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mrd/Desktop/Desktop/shipable/src/main/java/com/example/shipable/controllers/info&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "/Users/mrd/Desktop/Desktop/shipable/src",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/database" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/info" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services" />
-      <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons" />
@@ -140,7 +144,7 @@
       <workItem from="1680678831031" duration="151000" />
       <workItem from="1680688765080" duration="4313000" />
       <workItem from="1680699644714" duration="6575000" />
-      <workItem from="1680769395322" duration="15137000" />
+      <workItem from="1680769395322" duration="17885000" />
     </task>
     <servers />
   </component>

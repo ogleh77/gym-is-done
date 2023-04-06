@@ -47,6 +47,14 @@ public class CustomerInfoController extends CommonClass implements Initializable
     @FXML
     private Label whoAdded;
     @FXML
+    private Label chest;
+    @FXML
+    private Label hips;
+    @FXML
+    private Label foreArm;
+    @FXML
+    private Label waist;
+    @FXML
     private TableColumn<Payments, String> amountPaid;
 
     @FXML
@@ -126,6 +134,7 @@ public class CustomerInfoController extends CommonClass implements Initializable
             shift.setText(customer.getShift());
             weight.setText(customer.getWeight() + "");
             whoAdded.setText(customer.getWhoAdded());
+
             try {
                 payments = PaymentService.fetchAllCustomersPayments(customer.getPhone());
             } catch (CustomException e) {

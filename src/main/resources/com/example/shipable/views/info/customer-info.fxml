@@ -28,27 +28,27 @@
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <Label layoutX="121.0" layoutY="295.0" text="gender" textFill="#444646" AnchorPane.leftAnchor="121.0">
+    <Label layoutX="121.0" layoutY="259.0" text="gender" textFill="#444646" AnchorPane.leftAnchor="121.0">
         <font>
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <Label layoutX="120.0" layoutY="245.0" prefHeight="20.0" prefWidth="74.0" text="phone" textFill="#444646" AnchorPane.leftAnchor="120.0">
+    <Label layoutX="120.0" layoutY="224.0" prefHeight="20.0" prefWidth="74.0" text="phone" textFill="#444646" AnchorPane.leftAnchor="120.0">
         <font>
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <Label layoutX="572.0" layoutY="190.0" text="Shift" textFill="#444646" AnchorPane.rightAnchor="591.0">
+    <Label layoutX="122.0" layoutY="335.0" text="Shift" textFill="#444646" AnchorPane.rightAnchor="1041.0">
         <font>
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <Label layoutX="574.0" layoutY="320.0" text="address" textFill="#444646" AnchorPane.rightAnchor="564.0">
+    <Label layoutX="565.0" layoutY="230.0" text="waist" textFill="#444646" AnchorPane.rightAnchor="592.0">
         <font>
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <Label layoutX="573.0" layoutY="255.0" text="weight" textFill="#444646" AnchorPane.rightAnchor="573.0">
+    <Label layoutX="565.0" layoutY="190.0" text="weight" textFill="#444646" AnchorPane.rightAnchor="581.0">
         <font>
             <Font name="Verdana Bold" size="14.0" />
         </font>
@@ -82,42 +82,42 @@
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label fx:id="phone" layoutX="244.0" layoutY="243.0" prefHeight="20.0" prefWidth="74.0" text="4303924" textFill="#879194" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="832.0">
+    <Label fx:id="phone" layoutX="244.0" layoutY="222.0" prefHeight="20.0" prefWidth="74.0" text="4303924" textFill="#879194" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="832.0">
         <font>
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label fx:id="gander" layoutX="244.0" layoutY="290.0" prefHeight="20.0" prefWidth="74.0" text="Male" textFill="#879194" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="832.0">
+    <Label fx:id="gander" layoutX="244.0" layoutY="257.0" prefHeight="20.0" prefWidth="74.0" text="Male" textFill="#879194" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="832.0">
         <font>
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label fx:id="shift" layoutX="658.0" layoutY="187.0" prefHeight="24.0" prefWidth="103.0" text="Afternoon" textFill="#879194" AnchorPane.rightAnchor="439.0">
+    <Label fx:id="shift" layoutX="244.0" layoutY="332.0" prefHeight="24.0" prefWidth="103.0" text="Afternoon" textFill="#879194" AnchorPane.rightAnchor="853.0">
         <font>
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label fx:id="weight" layoutX="658.0" layoutY="252.0" prefHeight="20.0" prefWidth="83.0" text="65kg" textFill="#879194" AnchorPane.rightAnchor="459.0">
+    <Label fx:id="weight" layoutX="659.0" layoutY="187.0" prefHeight="20.0" prefWidth="83.0" text="65kg" textFill="#879194" AnchorPane.rightAnchor="458.0">
         <font>
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label fx:id="address" layoutX="658.0" layoutY="317.0" prefHeight="24.0" prefWidth="112.0" text="Xero awr" textFill="#879194" AnchorPane.rightAnchor="430.0">
+    <Label fx:id="waist" layoutX="656.0" layoutY="228.0" prefHeight="24.0" prefWidth="112.0" text="0" textFill="#879194" AnchorPane.rightAnchor="432.0">
         <font>
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label layoutX="119.0" layoutY="338.0" text="Who added" textFill="#444646">
+    <Label layoutX="119.0" layoutY="296.0" text="Who added" textFill="#444646">
         <font>
             <Font name="Verdana Bold" size="14.0" />
         </font>
     </Label>
-    <Label fx:id="whoAdded" layoutX="244.0" layoutY="335.0" prefHeight="20.0" prefWidth="74.0" text="Oh" textFill="#879194">
+    <Label fx:id="whoAdded" layoutX="244.0" layoutY="293.0" prefHeight="20.0" prefWidth="74.0" text="Oh" textFill="#879194">
         <font>
             <Font name="Helvetica" size="19.0" />
         </font>
     </Label>
-    <Label layoutX="119.0" layoutY="407.0" prefHeight="20.0" prefWidth="201.0" text="Halkan waxad ka heli kartaa" textFill="#2e2f2f" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="880.0">
+    <Label layoutX="119.0" layoutY="420.0" prefHeight="20.0" prefWidth="201.0" text="Halkan waxad ka heli kartaa" textFill="#2e2f2f" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="880.0">
         <font>
             <Font name="Tahoma" size="16.0" />
         </font>
@@ -127,42 +127,42 @@
             <Font name="Tahoma" size="16.0" />
         </font>
     </Label>
-   <Label layoutX="133.0" layoutY="435.0" prefHeight="20.0" prefWidth="540.0" text="Xogta lacag bixinaha macmiilku sameyy intii GYM ka xubinka ahaa.iyo" textFill="#6c7172">
+   <Label layoutX="133.0" layoutY="448.0" prefHeight="20.0" prefWidth="540.0" text="Xogta lacag bixinaha macmiilku sameyy intii GYM ka xubinka ahaa.iyo" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="15.0" />
       </font>
    </Label>
-   <Circle fill="#6d7883" layoutX="122.0" layoutY="445.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-   <Label layoutX="133.0" layoutY="455.0" prefHeight="20.0" prefWidth="540.0" text="Hakinta paymentka hadii macmiilku u baahdo" textFill="#6c7172">
+   <Circle fill="#6d7883" layoutX="122.0" layoutY="458.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+   <Label layoutX="133.0" layoutY="468.0" prefHeight="20.0" prefWidth="540.0" text="Hakinta paymentka hadii macmiilku u baahdo" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="15.0" />
       </font>
    </Label>
-   <Circle fill="#6d7883" layoutX="123.0" layoutY="465.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#afd6e3" height="10.0" layoutX="741.0" layoutY="426.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
-   <Label layoutX="760.0" layoutY="422.0" prefHeight="20.0" prefWidth="182.0" text="Wa la hakin karaa  (HAKI)" textFill="#6c7172">
+   <Circle fill="#6d7883" layoutX="123.0" layoutY="478.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#afd6e3" height="10.0" layoutX="741.0" layoutY="439.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
+   <Label layoutX="760.0" layoutY="435.0" prefHeight="20.0" prefWidth="182.0" text="Wa la hakin karaa  (HAKI)" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="13.0" />
       </font>
    </Label>
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff521f" height="10.0" layoutX="945.0" layoutY="428.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
-   <Label layoutX="964.0" layoutY="423.0" prefHeight="20.0" prefWidth="182.0" text="Wakhtiga ka dhacay    (---)" textFill="#6c7172">
+   <Label layoutX="964.0" layoutY="436.0" prefHeight="20.0" prefWidth="182.0" text="Wakhtiga ka dhacay    (---)" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="13.0" />
       </font>
    </Label>
-   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e42c10" height="10.0" layoutX="741.0" layoutY="456.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
-   <Label layoutX="760.0" layoutY="451.0" prefHeight="20.0" prefWidth="182.0" text="Wa hakisan yahay     (FUR)" textFill="#6c7172">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e42c10" height="10.0" layoutX="741.0" layoutY="469.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="10.0" />
+   <Label layoutX="760.0" layoutY="464.0" prefHeight="20.0" prefWidth="182.0" text="Wa hakisan yahay     (FUR)" textFill="#6c7172">
       <font>
          <Font name="Verdana" size="13.0" />
       </font>
    </Label>
-   <Label layoutX="741.0" layoutY="394.0" prefHeight="20.0" prefWidth="167.0" text="Payment button guide" textFill="#505454">
+   <Label layoutX="741.0" layoutY="407.0" prefHeight="20.0" prefWidth="167.0" text="Payment button guide" textFill="#505454">
       <font>
          <Font name="Verdana" size="15.0" />
       </font>
    </Label>
-   <TableView fx:id="tableView" layoutX="94.0" layoutY="486.0" prefHeight="200.0" prefWidth="1066.0" stylesheets="@../../style/css/home-table.css" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+   <TableView fx:id="tableView" layoutX="50.0" layoutY="499.0" prefHeight="200.0" prefWidth="1066.0" stylesheets="@../../style/css/home-table.css" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
       <columns>
          <TableColumn fx:id="paymentDate" prefWidth="98.0" text="last paid" />
          <TableColumn fx:id="expDate" prefWidth="97.0" text="exp date" />
@@ -178,4 +178,44 @@
          <TableColumn fx:id="pendingBtn" prefWidth="130.0" text="pend" />
       </columns>
    </TableView>
+   <Label layoutX="564.0" layoutY="269.0" text="hips" textFill="#444646">
+      <font>
+         <Font name="Verdana Bold" size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="hips" layoutX="657.0" layoutY="268.0" prefHeight="24.0" prefWidth="112.0" text="0" textFill="#879194">
+      <font>
+         <Font name="Helvetica" size="19.0" />
+      </font>
+   </Label>
+   <Label layoutX="565.0" layoutY="305.0" text="chest" textFill="#444646">
+      <font>
+         <Font name="Verdana Bold" size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="chest" layoutX="659.0" layoutY="304.0" prefHeight="24.0" prefWidth="112.0" text="0" textFill="#879194">
+      <font>
+         <Font name="Helvetica" size="19.0" />
+      </font>
+   </Label>
+   <Label layoutX="566.0" layoutY="343.0" text="forearm" textFill="#444646">
+      <font>
+         <Font name="Verdana Bold" size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="foreArm" layoutX="661.0" layoutY="340.0" prefHeight="24.0" prefWidth="112.0" text="0" textFill="#879194">
+      <font>
+         <Font name="Helvetica" size="19.0" />
+      </font>
+   </Label>
+   <Label layoutX="123.0" layoutY="372.0" text="address" textFill="#444646">
+      <font>
+         <Font name="Verdana Bold" size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="address" layoutX="245.0" layoutY="369.0" prefHeight="24.0" prefWidth="103.0" text="no address" textFill="#879194">
+      <font>
+         <Font name="Helvetica" size="19.0" />
+      </font>
+   </Label>
 </AnchorPane>

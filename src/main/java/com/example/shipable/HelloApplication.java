@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
-         // TODO: 05/04/2023 Lastly make the outdated payment off insha Allah
+        
     }
 
     public static void main(String[] args) {
