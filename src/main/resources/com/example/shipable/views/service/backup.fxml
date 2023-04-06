@@ -92,7 +92,7 @@
             <Font name="Verdana" size="12.0" />
         </font>
     </Label>
-    <Label fx:id="lastBackup" layoutX="339.0" layoutY="382.0" text="PATH:">
+    <Label fx:id="lastBackup" layoutX="339.0" layoutY="380.0" text="PATH:">
         <font>
             <Font name="Verdana" size="12.0" />
         </font>

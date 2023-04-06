@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -40,11 +41,11 @@ public class BackupController extends CommonClass implements Initializable {
 
     @FXML
     private JFXButton restoreBtn;
-    @FXML
-    private JFXButton deletePath;
+
     private Stage stage;
     private String restorePath;
     private boolean restored = false;
+    private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -56,7 +57,8 @@ public class BackupController extends CommonClass implements Initializable {
             try {
                 if (!BackupService.backupPaths().isEmpty()) {
                     listView.getItems().add(BackupService.backupPaths().get(0));
-                    lastBackup.setText("Last backup  " + BackupService.backupPaths().get(1));
+                    String s = (BackupService.backupPaths().get(1));
+                    lastBackup.setText("Last backup  " + s);
                 }
             } catch (SQLException e) {
                 errorMessage(e.getMessage());
