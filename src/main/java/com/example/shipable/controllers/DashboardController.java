@@ -94,6 +94,9 @@ public class DashboardController extends CommonClass implements Initializable {
 
             borderPaneDrag();
             borderPaneDropped();
+            addUserBtn.setDisable(!activeUser.getRole().equals("super_admin"));
+            updateUserBtn.setDisable(!activeUser.getRole().equals("super_admin"));
+            gymBtn.setDisable(!activeUser.getRole().equals("super_admin"));
         });
         try {
             dashboard();
@@ -282,12 +285,6 @@ public class DashboardController extends CommonClass implements Initializable {
                 Image image = new Image(bis);
                 activeProfile.setFill(new ImagePattern(image));
             }
-        }
-
-        if (!activeUser.getRole().equals("super_admin")) {
-            updateUserBtn.setDisable(true);
-            addUserBtn.setDisable(true);
-            gymBtn.setDisable(true);
         }
     }
 

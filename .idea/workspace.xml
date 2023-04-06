@@ -5,39 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bcd583-cef6-42d9-9be8-1faf0769faec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-add-new-30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-chest-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-forearm-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-legs-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-scales-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-stomachache-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-weight-scale-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/icons8-weight-scale-66.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/style/icons/weight.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/service/weights.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/933b7f40-4f6e-481a-843c-c6fee948435a/storage_v2/_src_/schema/main.uQUzAA.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/CustomerInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/info/CustomerInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/main/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/GymController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/services/SplashScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UserCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/users/UserCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Customers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Payments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/entities/Payments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/helpers/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/CustomerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/CustomerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/PaymentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/models/PaymentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/registrations.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/shipable/views/main/registrations.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shipable/controllers/DashboardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +138,7 @@
       <workItem from="1680678831031" duration="151000" />
       <workItem from="1680688765080" duration="4313000" />
       <workItem from="1680699644714" duration="6575000" />
-      <workItem from="1680769395322" duration="13580000" />
+      <workItem from="1680769395322" duration="14124000" />
     </task>
     <servers />
   </component>
