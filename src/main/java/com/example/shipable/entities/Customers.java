@@ -5,6 +5,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Arrays;
+
 public class Customers implements Comparable<Customers> {
     private int customerId;
     private final SimpleStringProperty firstName = new SimpleStringProperty();
@@ -17,11 +19,12 @@ public class Customers implements Comparable<Customers> {
     private byte[] image;
     private final SimpleDoubleProperty weight = new SimpleDoubleProperty();
     private final SimpleStringProperty whoAdded = new SimpleStringProperty();
-
+    private SimpleDoubleProperty waist = new SimpleDoubleProperty();
+    private SimpleDoubleProperty foreArm = new SimpleDoubleProperty();
+    private SimpleDoubleProperty hips = new SimpleDoubleProperty();
+    private SimpleDoubleProperty chest = new SimpleDoubleProperty();
     private ObservableList<Payments> payments;
 
-    public Customers() {
-    }
 
     public Customers(int customerId, String firstName, String lastName, String middleName, String phone, String gander, String shift, String address, byte[] image, double weight, String whoAdded) {
         this.customerId = customerId;
@@ -35,8 +38,11 @@ public class Customers implements Comparable<Customers> {
         this.image = image;
         this.setWeight(weight);
         this.setWhoAdded(whoAdded);
+
         this.payments = FXCollections.observableArrayList();
     }
+
+
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
@@ -85,6 +91,7 @@ public class Customers implements Comparable<Customers> {
     public String getGander() {
         return gander.get();
     }
+
     public void setGander(String gander) {
         this.gander.set(gander);
     }
@@ -92,6 +99,7 @@ public class Customers implements Comparable<Customers> {
     public String getShift() {
         return shift.get();
     }
+
     public void setShift(String shift) {
         this.shift.set(shift);
     }
@@ -99,6 +107,7 @@ public class Customers implements Comparable<Customers> {
     public String getAddress() {
         return address.get();
     }
+
     public void setAddress(String address) {
         this.address.set(address);
     }
@@ -114,6 +123,7 @@ public class Customers implements Comparable<Customers> {
     public double getWeight() {
         return weight.get();
     }
+
     public void setWeight(double weight) {
         this.weight.set(weight);
     }
@@ -121,6 +131,7 @@ public class Customers implements Comparable<Customers> {
     public String getWhoAdded() {
         return whoAdded.get();
     }
+
     public void setWhoAdded(String whoAdded) {
         this.whoAdded.set(whoAdded);
     }
@@ -132,10 +143,84 @@ public class Customers implements Comparable<Customers> {
     public void setPayments(ObservableList<Payments> payments) {
         this.payments = payments;
     }
+
+    public SimpleDoubleProperty weightProperty() {
+        return weight;
+    }
+
+    public double getWaist() {
+        return waist.get();
+    }
+
+    public SimpleDoubleProperty waistProperty() {
+        return waist;
+    }
+
+    public double getForeArm() {
+        return foreArm.get();
+    }
+
+    public SimpleDoubleProperty foreArmProperty() {
+        return foreArm;
+    }
+
+    public double getHips() {
+        return hips.get();
+    }
+
+    public SimpleDoubleProperty hipsProperty() {
+        return hips;
+    }
+
+    public double getChest() {
+        return chest.get();
+    }
+
+    public SimpleDoubleProperty chestProperty() {
+        return chest;
+    }
+
+    public void setWaist(double waist) {
+        this.waist.set(waist);
+    }
+
+    public void setForeArm(double foreArm) {
+        this.foreArm.set(foreArm);
+    }
+
+    public void setHips(double hips) {
+        this.hips.set(hips);
+    }
+
+    public void setChest(double chest) {
+        this.chest.set(chest);
+    }
+
     @Override
     public int compareTo(Customers o) {
         if (this.payments.get(0).getExpDate().isAfter(o.payments.get(0).getExpDate())) return 1;
         return 0;
     }
 
+    @Override
+    public String toString() {
+        return "Customers{" +
+                "customerId=" + customerId +
+                ", firstName=" + firstName +
+                ", lastName=" + lastName +
+                ", middleName=" + middleName +
+                ", phone=" + phone +
+                ", gander=" + gander +
+                ", shift=" + shift +
+                ", address=" + address +
+                ", image=" + Arrays.toString(image) +
+                ", weight=" + weight +
+                ", whoAdded=" + whoAdded +
+                ", waist=" + waist +
+                ", foreArm=" + foreArm +
+                ", hips=" + hips +
+                ", chest=" + chest +
+                ", payments=" + payments +
+                '}';
+    }
 }

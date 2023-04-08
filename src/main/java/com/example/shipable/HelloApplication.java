@@ -1,8 +1,5 @@
 package com.example.shipable;
 
-import com.example.shipable.controllers.info.CustomerInfoController;
-import com.example.shipable.dao.CustomerService;
-import com.example.shipable.dao.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,9 +17,7 @@ public class HelloApplication extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
-// TODO: 05/04/2023 Lastly make the outdated payment off insha Allah
-        // TODO: 04/04/2023 controller MAin is done checking next services insha Allah 
-
+         // TODO: 05/04/2023 Lastly make the outdated payment off insha Allah
     }
 
     public static void main(String[] args) {

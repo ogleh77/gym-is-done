@@ -53,7 +53,8 @@ public class HomeController extends CommonClass implements Initializable {
     private TextField search;
     @FXML
     private TableColumn<Customers, String> weight;
-
+    @FXML
+    private TableColumn<Customers, String> waist;
     private ObservableList<Customers> customersList;
     private FilteredList<Customers> filteredList;
     @FXML
@@ -67,7 +68,7 @@ public class HomeController extends CommonClass implements Initializable {
     private final int nextUserId;
     private final int nextCustomerId;
 
-    private Gym currentGym;
+    private final Gym currentGym;
 
     public HomeController() throws SQLException {
         nextUserId = (UserService.predictNextId() - 1);
@@ -97,8 +98,13 @@ public class HomeController extends CommonClass implements Initializable {
         weight.setCellValueFactory(customers -> new SimpleStringProperty(customers.getValue().getWeight() + "Kg"));
         address.setCellValueFactory(new PropertyValueFactory<>("address"));
         imagePath.setCellValueFactory(customers ->
-                new SimpleStringProperty(customers.getValue().getImage() == null ? "x"
+                new SimpleStringProperty(customers.getValue().getImage() == null ? "X"
                         : "√"));
+
+
+        waist.setCellValueFactory(customers ->
+                new SimpleStringProperty(customers.getValue().getImage() == null ? "0"
+                        : customers.getValue().getWaist() + "cm"));
 
         if (customersList.isEmpty()) {
             tableView.setPlaceholder(new Label("MACAAMIIL KUUMA DIWAAN GASHANA."));

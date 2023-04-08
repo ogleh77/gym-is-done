@@ -160,7 +160,7 @@ public class UserCreationController extends CommonClass implements Initializable
     private void phoneValidation() {
         phone.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                phone.setText(newValue.replaceAll("[^\\d]", ""));
+                phone.setText(newValue.replaceAll("\\D", ""));
                 phoneValidation.setText("Fadlan lanbarka xarfo looma ogola");
                 phoneValidation.setVisible(true);
             } else if (!phone.getText().matches("^\\d{7}")) {

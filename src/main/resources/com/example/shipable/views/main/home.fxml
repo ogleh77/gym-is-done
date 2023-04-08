@@ -37,14 +37,15 @@
         </effect>
         <TableView fx:id="tableView" prefHeight="201.0" prefWidth="1030.0" stylesheets="@../../style/css/home-table.css">
             <columns>
-                <TableColumn fx:id="customerId" prefWidth="88.0" text="Id" />
-                <TableColumn fx:id="fullName" prefWidth="200.0" text="Full name" />
-                <TableColumn fx:id="phone" prefWidth="117.0" text="phone" />
-                <TableColumn fx:id="gander" prefWidth="101.0" text="gander" />
-                <TableColumn fx:id="shift" prefWidth="107.0" text="shift" />
-                <TableColumn fx:id="address" prefWidth="120.0" text="address" />
-                <TableColumn fx:id="weight" prefWidth="100.0" text="weight" />
-                <TableColumn fx:id="imagePath" prefWidth="231.0" text="image path" />
+                <TableColumn fx:id="customerId" prefWidth="66.0" text="Id" />
+                <TableColumn fx:id="fullName" prefWidth="208.0" text="Full name" />
+                <TableColumn fx:id="phone" prefWidth="101.0" text="phone" />
+                <TableColumn fx:id="gander" prefWidth="96.0" text="gander" />
+                <TableColumn fx:id="shift" prefWidth="111.0" text="shift" />
+                <TableColumn fx:id="address" prefWidth="152.0" text="address" />
+                <TableColumn fx:id="weight" prefWidth="115.0" text="weight" />
+                <TableColumn fx:id="waist" prefWidth="91.0" text="waist" />
+            <TableColumn fx:id="imagePath" prefWidth="133.0" text="image" />
             </columns>
         </TableView>
     </VBox>

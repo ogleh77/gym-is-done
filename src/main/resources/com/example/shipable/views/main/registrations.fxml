@@ -65,13 +65,13 @@
             <Font name="Arial Bold" size="16.0" />
         </font>
     </Label>
-    <Label layoutX="648.0" layoutY="302.0" text="address" textFill="#328ca8" AnchorPane.rightAnchor="440.0">
+    <Label layoutX="698.0" layoutY="342.0" text="address" textFill="#328ca8" AnchorPane.rightAnchor="440.0">
         <font>
             <Font name="Arial Bold" size="16.0" />
         </font>
     </Label>
-    <TextField fx:id="weight" layoutX="728.0" layoutY="214.0" prefHeight="40.0" prefWidth="313.0" promptText="initial weight" AnchorPane.rightAnchor="109.0" />
-    <Label layoutX="651.0" layoutY="224.0" text="weight" textFill="#328ca8" AnchorPane.rightAnchor="448.0">
+    <TextField fx:id="weight" layoutX="779.0" layoutY="229.0" prefHeight="40.0" prefWidth="74.0" promptText="weight" AnchorPane.rightAnchor="347.0" />
+    <Label layoutX="778.0" layoutY="198.0" text="Measuremnts" textFill="#328ca8" AnchorPane.rightAnchor="318.0">
         <font>
             <Font name="Arial Bold" size="16.0" />
         </font>
@@ -118,7 +118,7 @@
             </ImageView>
         </graphic>
     </JFXButton>
-    <TextField fx:id="phone" layoutX="234.0" layoutY="325.0" prefHeight="40.0" prefWidth="333.0" promptText="(063)XXX-XXX" AnchorPane.leftAnchor="234.0" />
+    <TextField fx:id="phone" layoutX="234.0" layoutY="330.0" prefHeight="40.0" prefWidth="333.0" promptText="XXX-XXXX" AnchorPane.leftAnchor="234.0" />
     <Label layoutX="110.0" layoutY="339.0" prefHeight="20.0" prefWidth="74.0" text="phone" textFill="#328ca8" AnchorPane.leftAnchor="110.0">
         <font>
             <Font name="Arial Bold" size="16.0" />
@@ -134,7 +134,7 @@
             <Font name="Tahoma Bold" size="12.0" />
         </font>
     </Label>
-    <TextField fx:id="address" layoutX="728.0" layoutY="292.0" prefHeight="40.0" prefWidth="313.0" promptText="e.g (063)XXX-XXX" AnchorPane.rightAnchor="109.0" />
+    <TextField fx:id="address" layoutX="778.0" layoutY="332.0" prefHeight="40.0" prefWidth="313.0" promptText="e.g (063)XXX-XXX" AnchorPane.rightAnchor="109.0" />
     <Label layoutX="235.0" layoutY="382.0" prefHeight="24.0" prefWidth="333.0" textFill="#dd2c2c" visible="false" AnchorPane.bottomAnchor="344.0">
         <font>
             <Font name="Arial" size="14.0" />
@@ -152,9 +152,33 @@
             </HBox.margin>
         </Label>
     </HBox>
-    <Label fx:id="weightValidation" layoutX="778.0" layoutY="261.0" prefHeight="20.0" prefWidth="321.0" text="message" textFill="#bf1a1a" visible="false">
-        <font>
-            <Font name="Helvetica" size="16.0" />
-        </font>
-    </Label>
+   <TextField fx:id="Forearm" layoutX="778.0" layoutY="277.0" prefHeight="40.0" prefWidth="74.0" promptText="forearm" />
+   <TextField fx:id="hips" layoutX="893.0" layoutY="227.0" prefHeight="40.0" prefWidth="74.0" promptText="hips" />
+   <TextField fx:id="chest" layoutX="893.0" layoutY="276.0" prefHeight="40.0" prefWidth="74.0" promptText="chest" />
+   <ImageView fitHeight="29.0" fitWidth="25.0" layoutX="860.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../style/icons/icons8-chest-50.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="29.0" fitWidth="25.0" layoutX="742.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../style/icons/icons8-forearm-50.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="737.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../style/icons/icons8-scales-50.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="29.0" fitWidth="25.0" layoutX="861.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../style/icons/icons8-legs-64.png" />
+      </image>
+   </ImageView>
+   <TextField fx:id="waist" layoutX="1018.0" layoutY="227.0" prefHeight="40.0" prefWidth="74.0" promptText="waist" />
+   <ImageView fitHeight="29.0" fitWidth="25.0" layoutX="980.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../style/icons/icons8-stomachache-50.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

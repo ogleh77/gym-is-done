@@ -176,7 +176,7 @@ public class GymController extends CommonClass implements Initializable {
     private void poxingValidation() {
         poxingCost.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("(\\d*)")) {
-                poxingCost.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
+                poxingCost.setText(newValue.replaceAll("[^\\d.?}]", ""));
             }
         });
     }
@@ -184,7 +184,7 @@ public class GymController extends CommonClass implements Initializable {
     private void boxValidation() {
         boxCost.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("(\\d*)")) {
-                boxCost.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
+                boxCost.setText(newValue.replaceAll("[^\\d.?}]", ""));
             }
         });
     }
@@ -192,7 +192,7 @@ public class GymController extends CommonClass implements Initializable {
     private void pendValidation() {
         pendDate.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                pendDate.setText(newValue.replaceAll("[^\\d]", ""));
+                pendDate.setText(newValue.replaceAll("\\D", ""));
             }
         });
     }
@@ -200,7 +200,7 @@ public class GymController extends CommonClass implements Initializable {
     private void discountValidation() {
         maxDiscount.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                maxDiscount.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
+                maxDiscount.setText(newValue.replaceAll("[^\\d.?}]", ""));
             }
         });
     }
@@ -208,7 +208,7 @@ public class GymController extends CommonClass implements Initializable {
     private void fitnessValidation() {
         fitnessCost.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                fitnessCost.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
+                fitnessCost.setText(newValue.replaceAll("[^\\d.?}]", ""));
             }
         });
     }
@@ -216,7 +216,7 @@ public class GymController extends CommonClass implements Initializable {
     private void zaadValidation() {
         zaad.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                zaad.setText(newValue.replaceAll("[^\\d]", ""));
+                zaad.setText(newValue.replaceAll("\\D", ""));
             }
         });
     }
@@ -224,7 +224,7 @@ public class GymController extends CommonClass implements Initializable {
     private void eDahabValidation() {
         eDahab.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                eDahab.setText(newValue.replaceAll("[^\\d]", ""));
+                eDahab.setText(newValue.replaceAll("\\D", ""));
             }
         });
     }

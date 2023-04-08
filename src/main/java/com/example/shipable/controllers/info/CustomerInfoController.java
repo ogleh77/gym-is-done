@@ -156,8 +156,9 @@ public class CustomerInfoController extends CommonClass implements Initializable
             pendingBtn.setCellValueFactory(new PropertyValueFactory<>("pendingBtn"));
             poxing.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().isPoxing() ? "√" : "X"));
             running.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().isOnline() ? "√" : "X"));
-            daysRemind.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().getDaysRemind() < 1 ? "0 days" :
-                    payment.getValue().getDaysRemind() == 1 ? "1 day" : payment.getValue().getDaysRemind() + " days"));
+
+            daysRemind.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().getDaysRemind()));
+
             vipBox.setCellValueFactory(payment -> new SimpleStringProperty(payment.getValue().getBox() != null ? "√" : "X"));
             year.setCellValueFactory(new PropertyValueFactory<>("year"));
             tableView.setItems(payments);

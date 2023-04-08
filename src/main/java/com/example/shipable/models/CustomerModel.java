@@ -14,12 +14,12 @@ public class CustomerModel {
     private static final Connection connection = DbConnection.getConnection();
 
     public void insert(Customers customer) throws SQLException {
-        String insertQuery = "INSERT INTO customers(first_name, middle_name, last_name, phone, gander, shift, address, image, weight, who_added)\n" + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertQuery = "INSERT INTO customers(FIRST_NAME, MIDDLE_NAME, LAST_NAME, PHONE, GANDER, SHIFT, ADDRESS, IMAGE, WEIGHT, WHO_ADDED, WAIST, HIPS, CHEST, FORE_ARM)\n" + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
         insertOrUpdateStatement(customer, insertQuery, true);
     }
 
     public void update(Customers customer) throws SQLException {
-        String updateQuery = "UPDATE customers SET first_name=?,middle_name=?,last_name=?,phone=?,gander=?,shift=?, " + "address=?,image=?,weight=? WHERE customer_id=" + customer.getCustomerId();
+        String updateQuery = "UPDATE customers SET first_name=?,middle_name=?,last_name=?,phone=?,gander=?,shift=?, " + "address=?,image=?,weight=?,waist=?,hips=?,chest=?,fore_arm=? WHERE customer_id=" + customer.getCustomerId();
         insertOrUpdateStatement(customer, updateQuery, false);
     }
 
@@ -138,6 +138,10 @@ public class CustomerModel {
     //---------------––Helpers---------------------
     private void getCustomers(ObservableList<Customers> customers, ResultSet rs, ObservableList<Payments> payment) throws SQLException {
         Customers customer = new Customers(rs.getInt("customer_id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("middle_name"), rs.getString("phone"), rs.getString("gander"), rs.getString("shift"), rs.getString("address"), rs.getBytes("image"), rs.getDouble("weight"), rs.getString("who_added"));
+        customer.setChest(rs.getDouble("chest"));
+        customer.setForeArm(rs.getDouble("fore_arm"));
+        customer.setWaist(rs.getDouble("waist"));
+        customer.setHips(rs.getDouble("hips"));
 
         if (payment != null) {
             customer.setPayments(payment);
@@ -158,7 +162,18 @@ public class CustomerModel {
         ps.setDouble(9, customer.getWeight());
         if (insert) {
             ps.setString(10, customer.getWhoAdded());
+            ps.setDouble(11, customer.getWaist());
+            ps.setDouble(12, customer.getHips());
+            ps.setDouble(13, customer.getChest());
+            ps.setDouble(14, customer.getForeArm());
+        } else {
+            ps.setDouble(10, customer.getWaist());
+            ps.setDouble(11, customer.getHips());
+            ps.setDouble(12, customer.getChest());
+            ps.setDouble(13, customer.getForeArm());
         }
+
+
         ps.executeUpdate();
         ps.close();
     }

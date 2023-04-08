@@ -234,7 +234,7 @@ public class PaymentController extends CommonClass implements Initializable {
     private void validateDiscount() {
         discount.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                discount.setText(newValue.replaceAll("[^\\d\\.?}]", ""));
+                discount.setText(newValue.replaceAll("[^\\d.?}]", ""));
             }
             if (!discount.getText().isBlank()) {
                 double _discount = Double.parseDouble(discount.getText());

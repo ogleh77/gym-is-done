@@ -7,6 +7,7 @@ import com.example.shipable.entities.Customers;
 import com.example.shipable.entities.Payments;
 import com.example.shipable.entities.Users;
 import com.example.shipable.helpers.CommonClass;
+import com.example.shipable.models.PaymentModel;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -77,10 +78,13 @@ public class SplashScreenController extends CommonClass implements Initializable
                     LocalDate expDate = payment.getExpDate();
                     if (now.plusDays(2).isEqual(expDate) || now.plusDays(1).isEqual(expDate) || now.isEqual(expDate)) {
                         warningList.add(customer);
-                    } else {
-                        ///PaymentModel.offPayment(payment);
-                    }
+                        System.out.println(customer.getFirstName() + " warning");
 
+                    } else if (now.isAfter(payment.getExpDate())) {
+                        PaymentModel.offPayment(payment);
+                    } else {
+                        System.out.println(customer.getFirstName() + " active");
+                    }
                 }
                 Thread.sleep(sleepTime);
             }

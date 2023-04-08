@@ -23,7 +23,7 @@ public class Payments {
     private final SimpleBooleanProperty online = new SimpleBooleanProperty();
     private final SimpleBooleanProperty pending = new SimpleBooleanProperty();
     private final JFXButton pendingBtn;
-    private int daysRemind=0;
+//    private int daysRemind = 0;
 
     public Payments(int paymentID, String paymentDate, LocalDate expDate, String month, String year, double amountPaid, String paidBy, double discount, boolean poxing, String customerFK, boolean online, boolean pending) {
         this.paymentID = paymentID;
@@ -79,6 +79,7 @@ public class Payments {
     public void setMonth(String month) {
         this.month.set(month);
     }
+
     public void setYear(String year) {
         this.year.set(year);
     }
@@ -114,6 +115,7 @@ public class Payments {
     public boolean isPoxing() {
         return poxing.get();
     }
+
     public void setPoxing(boolean poxing) {
         this.poxing.set(poxing);
     }
@@ -125,6 +127,7 @@ public class Payments {
     public void setBox(Box box) {
         this.box = box;
     }
+
     public boolean isOnline() {
         return online.get();
     }
@@ -145,10 +148,16 @@ public class Payments {
         return pendingBtn;
     }
 
-    public int getDaysRemind() {
+    public String getDaysRemind() {
+        Period period = Period.between(LocalDate.now(), expDate);
         if (expDate.isAfter(LocalDate.now()))
-            daysRemind = Period.between(LocalDate.now(), expDate).getDays();
-        return daysRemind;
+            if (period.getMonths() > 0) {
+                return period.getMonths() + " Month";
+            }
+        if (period.getDays() < 0) {
+            return "outdate";
+        }
+        return period.getDays() == 1 ? "1 day" : period.getDays() + " days";
     }
 
 }

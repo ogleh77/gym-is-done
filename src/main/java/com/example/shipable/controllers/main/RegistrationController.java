@@ -19,7 +19,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -66,13 +65,22 @@ public class RegistrationController extends CommonClass implements Initializable
     private ComboBox<String> shift;
     @FXML
     private TextField weight;
-    @FXML
-    private Label weightValidation;
     private boolean isCustomerNew = true;
     private final int newCustomerID;
     private boolean done = false;
     private ObservableList<Customers> customersList;
     private final ButtonType payment;
+    @FXML
+    private TextField Forearm;
+
+    @FXML
+    private TextField chest;
+
+    @FXML
+    private TextField hips;
+
+    @FXML
+    private TextField waist;
 
     public RegistrationController() throws SQLException {
         newCustomerID = CustomerService.predictNextId();
@@ -90,6 +98,10 @@ public class RegistrationController extends CommonClass implements Initializable
 
         phoneValidation();
         weightValidation();
+        chestValidation();
+        waistValidation();
+        hipsValidation();
+        forearmValidation();
         service.setOnSucceeded(e -> {
             registerBtn.setGraphic(getFirstImage("/com/example/shipable/style/icons/icons8-save-30.png"));
             registerBtn.setText(isCustomerNew ? "Payment" : "Updated");
@@ -120,7 +132,7 @@ public class RegistrationController extends CommonClass implements Initializable
         if (done && isCustomerNew) {
             openPayment();
         } else {
-            if (isValid(getMandatoryFields(), genderGroup) && (phone.getText().length() == 7 || !phoneValidation.isVisible()) && (weight.getText().length() == 2 || !weightValidation.isVisible())) {
+            if (isValid(getMandatoryFields(), genderGroup) && (phone.getText().length() == 7)) {
                 if (!imageUploaded) {
                     checkImage(imgView, "Fadlan sawirku wuu kaa cawinayaa inaad wejiga \n" + "macmiilka ka dhex garan kartid macamisha kle");
                     return;
@@ -165,9 +177,12 @@ public class RegistrationController extends CommonClass implements Initializable
             } else {
                 female.setSelected(true);
             }
-            weight.setText(String.valueOf(customer.getWeight()).substring(0, 2));
             shift.setValue(customer.getShift());
             address.setText(customer.getAddress() != null ? customer.getAddress() : "No address");
+            waist.setText(String.valueOf(customer.getWaist()));
+            Forearm.setText(String.valueOf(customer.getForeArm()));
+            hips.setText(String.valueOf(customer.getHips()));
+            chest.setText(String.valueOf(customer.getChest()));
 
             if (customer.getImage() != null) {
                 ByteArrayInputStream bis = new ByteArrayInputStream(customer.getImage());
@@ -216,8 +231,11 @@ public class RegistrationController extends CommonClass implements Initializable
                         Thread.sleep(1000);
 
                     } catch (Exception e) {
-                        Platform.runLater(() -> errorMessage(e.getMessage()));
-                        e.printStackTrace();
+                        if (e.getClass().isInstance(SQLException.class)) {
+                            Platform.runLater(() -> errorMessage(e.getMessage()));
+                        } else {
+                            Platform.runLater(() -> errorMessage("Fadlan hubi inad si saxan u gelisay cabirada  " + " error caused " + e.getMessage()));
+                        }
                     }
                     return null;
                 }
@@ -227,11 +245,22 @@ public class RegistrationController extends CommonClass implements Initializable
 
     //---------------------------helpers-----------------------------
     private Customers savingCustomer() {
+
         String gander = male.isSelected() ? "Male" : "Female";
         String _address = address.getText() != null ? address.getText().trim() : "No address";
         double _weight = ((!weight.getText().isEmpty() || !weight.getText().isBlank())) ? Double.parseDouble(weight.getText().trim()) : 65.0;
         int customerId = super.customer == null ? 0 : customer.getCustomerId();
         String _shift = shift.getValue() != null ? shift.getValue() : "Morning";
+
+        double _waist = (!waist.getText().isEmpty() || !waist.getText().isBlank() ?
+                Double.parseDouble(waist.getText()) : 0);
+        double _hips = (!hips.getText().isEmpty() || !hips.getText().isBlank() ?
+                Double.parseDouble(hips.getText()) : 0);
+
+        double _forearm = (!Forearm.getText().isEmpty() || !Forearm.getText().isBlank() ?
+                Double.parseDouble(Forearm.getText()) : 0);
+        double _chest = (!chest.getText().isEmpty() || !chest.getText().isBlank() ?
+                Double.parseDouble(chest.getText()) : 0);
 
         if (customer == null) {
             customer = new Customers(newCustomerID, firstName.getText().trim(), lastName.getText().trim(), middleName.getText().trim(), phone.getText().trim(), gander, _shift, _address, selectedFile == null ? null : readFile(selectedFile.getAbsolutePath()), _weight, activeUser.getUsername());
@@ -246,15 +275,20 @@ public class RegistrationController extends CommonClass implements Initializable
             customer.setLastName(lastName.getText().trim());
             customer.setMiddleName(middleName.getText().trim());
             customer.setPhone(phone.getText().trim());
-            customer.setWeight(_weight);
         }
+        customer.setWeight(_weight);
+        customer.setHips(_hips);
+        customer.setChest(_chest);
+        customer.setForeArm(_forearm);
+        customer.setWaist(_waist);
         return customer;
     }
+
 
     private void phoneValidation() {
         phone.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
-                phone.setText(newValue.replaceAll("[^\\d]", ""));
+                phone.setText(newValue.replaceAll("\\D", ""));
                 phoneValidation.setText("Fadlan lanbarka xarfo looma ogola");
                 phoneValidation.setVisible(true);
             } else if (!phone.getText().matches("^\\d{7}")) {
@@ -265,21 +299,6 @@ public class RegistrationController extends CommonClass implements Initializable
             }
         });
 
-    }
-
-    private void weightValidation() {
-        weight.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                weight.setText(newValue.replaceAll("[^\\d]", ""));
-                weightValidation.setText("Fadlan misaanka xarfo looma ogola");
-                weightValidation.setVisible(true);
-            } else if (!weight.getText().matches("^\\d{0,2}")) {
-                weightValidation.setText("Ma jiro qof boaqol sano ka badan");
-                weightValidation.setVisible(true);
-            } else {
-                weightValidation.setVisible(false);
-            }
-        });
     }
 
     private void paymentMethod() {
@@ -331,6 +350,47 @@ public class RegistrationController extends CommonClass implements Initializable
         HomeController controller = loader.getController();
         controller.setActiveUser(activeUser);
         controller.setBorderPane(borderPane);
+    }
+    //----------------Mesurements------------------------–
+
+    private void chestValidation() {
+        chest.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("(\\d*)")) {
+                chest.setText(newValue.replaceAll("[^\\d.?}]", ""));
+            }
+        });
+    }
+
+    private void waistValidation() {
+        waist.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("(\\d*)")) {
+                waist.setText(newValue.replaceAll("[^\\d.?}]", ""));
+            }
+        });
+    }
+
+    private void hipsValidation() {
+        hips.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("(\\d*)")) {
+                hips.setText(newValue.replaceAll("[^\\d.?}]", ""));
+            }
+        });
+    }
+
+    private void forearmValidation() {
+        Forearm.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("(\\d*)")) {
+                Forearm.setText(newValue.replaceAll("[^\\d.?}]", ""));
+            }
+        });
+    }
+
+    private void weightValidation() {
+        weight.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("(\\d*)")) {
+                weight.setText(newValue.replaceAll("[^\\d.?}]", ""));
+            }
+        });
     }
 
 
